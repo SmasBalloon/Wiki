@@ -1,0 +1,376 @@
+/* ===========================================
+   GUIDES PAGE - Styles spécifiques aux pages de guides
+   =========================================== */
+/* Import du CSS root */
+@import url('root.css');
+
+/* ===========================================
+   LAYOUT PRINCIPAL
+   =========================================== */
+
+.main-content {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+.page-hero {
+    background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-color) 100%);
+    padding: 4rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    position: relative;
+}
+
+.page-title i {
+    color: var(--accent-color);
+    margin-right: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* ===========================================
+   SECTION DE CONTENU
+   =========================================== */
+
+.content-section {
+    padding: 4rem 0;
+    background: var(--dark-color);
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* ===========================================
+   CATÉGORIES DE GUIDES
+   =========================================== */
+
+.guide-category {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    transition: var(--transition);
+}
+
+.guide-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.guide-category:hover::before {
+    width: 8px;
+}
+
+.guide-category h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.guide-category h2::before {
+    font-size: 1.3rem;
+}
+
+/* ===========================================
+   ITEMS DE GUIDES
+   =========================================== */
+
+.guide-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.guide-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 3px solid transparent;
+    transition: var(--transition);
+    position: relative;
+}
+
+.guide-item:hover {
+    background: rgba(251, 191, 36, 0.05);
+    border-left-color: var(--accent-color);
+    transform: translateX(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.guide-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guide-item h3::before {
+    content: '📚';
+    font-size: 1rem;
+}
+
+/* ===========================================
+   SECTIONS SPÉCIALES
+   =========================================== */
+
+/* Étapes de guide */
+.guide-steps {
+    margin-top: 1rem;
+}
+
+.guide-steps ol {
+    background: rgba(251, 191, 36, 0.08);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.guide-steps ol li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.guide-steps ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Conseils */
+.guide-tips ul {
+    background: rgba(220, 38, 38, 0.08);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    list-style: none;
+}
+
+.guide-tips ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.guide-tips ul li::before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Listes de lieux */
+.locations-list ul,
+.money-methods ul,
+.bank-info ul {
+    background: rgba(59, 130, 246, 0.08);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+    list-style: none;
+}
+
+.locations-list ul li,
+.money-methods ul li,
+.bank-info ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.locations-list ul li::before {
+    content: '📍';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.money-methods ul li::before {
+    content: '💰';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bank-info ul li::before {
+    content: '🏦';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Commandes de chat */
+.chat-commands ul {
+    background: var(--dark-tertiary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    list-style: none;
+}
+
+.chat-commands ul li {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 6px;
+    color: var(--accent-color);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    transition: var(--transition);
+}
+
+.chat-commands ul li:hover {
+    background: rgba(251, 191, 36, 0.1);
+    border-color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+/* ===========================================
+   COULEURS SPÉCIFIQUES PAR CATÉGORIE
+   =========================================== */
+
+.guide-category:nth-child(1)::before { background: #10b981; }
+.guide-category:nth-child(1):hover .guide-item { border-left-color: #10b981; }
+
+.guide-category:nth-child(2)::before { background: #3b82f6; }
+.guide-category:nth-child(2):hover .guide-item { border-left-color: #3b82f6; }
+
+.guide-category:nth-child(3)::before { background: #f59e0b; }
+.guide-category:nth-child(3):hover .guide-item { border-left-color: #f59e0b; }
+
+.guide-category:nth-child(4)::before { background: #8b5cf6; }
+.guide-category:nth-child(4):hover .guide-item { border-left-color: #8b5cf6; }
+
+/* ===========================================
+   EMOJIS POUR LES CATÉGORIES
+   =========================================== */
+
+.guide-category:nth-child(1) h2::before { content: '🎮'; }
+.guide-category:nth-child(2) h2::before { content: '🗺️'; }
+.guide-category:nth-child(3) h2::before { content: '💰'; }
+.guide-category:nth-child(4) h2::before { content: '�'; }
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .guides-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .guide-category {
+        padding: 2rem;
+    }
+    
+    .guide-steps ol {
+        padding: 1rem 1.5rem;
+    }
+    
+    .guide-tips ul,
+    .locations-list ul,
+    .money-methods ul,
+    .bank-info ul,
+    .chat-commands ul {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 3rem 0 2rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .guide-category {
+        padding: 1.5rem;
+    }
+    
+    .guide-item {
+        padding: 1rem;
+    }
+}
