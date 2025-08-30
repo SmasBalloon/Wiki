@@ -8,27 +8,27 @@
     --secondary-color: #dc2626;
     --accent-color: #fbbf24;
     --accent-light: #fef3c7;
-    
+
     /* Couleurs sombres */
     --dark-color: #0f0f0f;
     --dark-secondary: #1a1a1a;
     --dark-tertiary: #262626;
-    
+
     /* Couleurs de texte */
     --text-color: #f5f5f5;
     --text-secondary: #d1d5db;
     --text-light: #9ca3af;
-    
+
     /* Couleurs de bordure */
     --border-color: #374151;
     --card-bg: #1f2937;
-    
+
     /* Ombres */
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
     --shadow-red: 0 8px 25px rgba(220, 38, 38, 0.3);
     --shadow-yellow: 0 8px 25px rgba(251, 191, 36, 0.3);
-    
+
     /* Transitions */
     --transition: all 0.3s ease;
 }
@@ -54,13 +54,21 @@ body {
     padding: 0 2rem;
 }
 
+/* Main content padding pour éviter le header fixe */
+.main-content {
+    padding-top: 73px;
+    min-height: calc(100vh - 73px);
+    background:
+        radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.2) 0%, transparent 60%);
+}
+
 /* ===========================================
    HEADER STYLES
    =========================================== */
 
 .header {
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--dark-secondary);
     border-bottom: 1px solid var(--border-color);
     position: fixed;
     top: 0;
@@ -219,8 +227,12 @@ body {
     color: var(--accent-color);
 }
 
-.lang-option .flag {
-    font-size: 1.2rem;
+.lang-option .flag-img {
+    height: 100%;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
 }
 
 /* Menu hamburger pour mobile */
@@ -250,7 +262,6 @@ body {
     background: var(--dark-secondary);
     border-top: 1px solid var(--border-color);
     padding: 3rem 0 1rem;
-    margin-top: 4rem;
 }
 
 .footer-content {
@@ -374,7 +385,12 @@ body {
 }
 
 /* Titres */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -405,12 +421,6 @@ a:hover {
     color: var(--primary-color);
 }
 
-/* Main content padding pour éviter le header fixe */
-.main-content {
-    padding-top: 80px;
-    min-height: calc(100vh - 80px);
-}
-
 /* ===========================================
    RESPONSIVE DESIGN
    =========================================== */
@@ -431,7 +441,7 @@ a:hover {
         left: 0;
         width: 100%;
         background: var(--card-bg);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         flex-direction: column;
         padding: 1rem 0;
         border-top: 1px solid var(--border-color);

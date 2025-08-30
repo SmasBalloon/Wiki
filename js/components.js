@@ -8,18 +8,43 @@ class ComponentLoader {
     // Détecte la langue actuelle basée sur l'URL
     detectLanguage() {
         const path = window.location.pathname;
-        if (path.includes('/en/')) return 'en';
-        if (path.includes('/es/')) return 'es';
+        const pathParts = path.split('/').filter(part => part !== '');
+        
+        // Chercher 'en' ou 'es' dans les parties du chemin
+        if (pathParts.includes('en')) return 'en';
+        if (pathParts.includes('es')) return 'es';
         return 'fr'; // Français par défaut
     }
 
     // Détermine le chemin de base pour les composants
     getBasePath() {
         const path = window.location.pathname;
-        if (path.includes('/en/') || path.includes('/es/')) {
-            return '../components';
+        const pathParts = path.split('/').filter(part => part !== '');
+        
+        // Si on est dans une langue, calculer le chemin relatif vers components
+        if (pathParts.includes('en') || pathParts.includes('es')) {
+            const languageIndex = pathParts.findIndex(part => part === 'en' || part === 'es');
+            // Compter le nombre de niveaux après la langue
+            const levelsAfterLang = pathParts.length - languageIndex - 1;
+            
+            if (levelsAfterLang > 1) {
+                // On est dans un sous-dossier, remonter d'autant de niveaux
+                const backLevels = '../'.repeat(levelsAfterLang - 1);
+                return `${backLevels}../components`;
+            } else {
+                // On est directement dans le dossier de langue
+                return '../components';
+            }
         }
-        return 'components';
+        
+        // Pour le français (racine), calculer selon le niveau actuel
+        const currentLevel = pathParts.length;
+        if (currentLevel > 1) {
+            const backLevels = '../'.repeat(currentLevel - 1);
+            return `${backLevels}components`;
+        }
+        
+        return '/components';
     }
 
     // Charge un composant HTML
@@ -109,24 +134,53 @@ class ComponentLoader {
 // Fonction pour changer de langue
 function switchLanguage(targetLang) {
     const currentPath = window.location.pathname;
-    const currentPage = currentPath.split('/').pop() || 'index.html';
+    const pathParts = currentPath.split('/').filter(part => part !== '');
     
     let newPath;
     
+    // Détecter si on est dans une page de langue (/en/ ou /es/)
+    const isInLanguageFolder = pathParts.includes('en') || pathParts.includes('es');
+    
     if (targetLang === 'fr') {
         // Retour à la racine pour le français
-        if (currentPath.includes('/en/') || currentPath.includes('/es/')) {
-            newPath = `../${currentPage}`;
+        if (isInLanguageFolder) {
+            // Retirer la langue du chemin
+            const languageIndex = pathParts.findIndex(part => part === 'en' || part === 'es');
+            const newPathParts = pathParts.slice(languageIndex + 1);
+            newPath = '/' + newPathParts.join('/');
         } else {
-            newPath = currentPage;
+            // Déjà en français
+            newPath = currentPath;
         }
     } else {
         // Aller vers le dossier de langue
-        if (currentPath.includes('/en/') || currentPath.includes('/es/')) {
-            newPath = `../${targetLang}/${currentPage}`;
+        if (isInLanguageFolder) {
+            // Remplacer la langue existante
+            const languageIndex = pathParts.findIndex(part => part === 'en' || part === 'es');
+            pathParts[languageIndex] = targetLang;
+            newPath = '/' + pathParts.join('/');
         } else {
-            newPath = `${targetLang}/${currentPage}`;
+            // Ajouter la langue au début du chemin
+            if (pathParts.length === 0 || pathParts[0] === 'index.html') {
+                newPath = `/${targetLang}/`;
+            } else {
+                newPath = `/${targetLang}/${pathParts.join('/')}`;
+            }
         }
+    }
+    
+    // S'assurer que les pages .html ont bien l'extension si nécessaire
+    if (!newPath.endsWith('/') && !newPath.includes('.') && pathParts.length > 0) {
+        // Seulement ajouter .html si le chemin original en avait une
+        const originalHasExtension = currentPath.includes('.html');
+        if (originalHasExtension) {
+            newPath += '.html';
+        }
+    }
+    
+    // Vérifier si on est sur une page d'index et rediriger vers le dossier
+    if (newPath.endsWith('/index.html')) {
+        newPath = newPath.replace('/index.html', '/');
     }
     
     window.location.href = newPath;
@@ -149,10 +203,10 @@ function stickyHeader() {
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 15, 15, 0.98)';
+                header.style.background = 'var(--dark-secondary)';
                 header.style.boxShadow = '0 2px 20px rgba(220, 38, 38, 0.2)';
             } else {
-                header.style.background = 'rgba(15, 15, 15, 0.95)';
+                header.style.background = 'var(--dark-secondary)';
                 header.style.boxShadow = 'none';
             }
         });
@@ -230,7 +284,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-// Message dans la console
-console.log('%c🎮 Bienvenue sur Capitalyx !', 'color: #dc2626; font-size: 20px; font-weight: bold;');
-console.log('%c👨‍💻 Système de composants chargé', 'color: #fbbf24; font-size: 14px;');

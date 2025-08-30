@@ -7,14 +7,7 @@
 /* ===========================================
    LAYOUT PRINCIPAL
    =========================================== */
-
-.main-content {
-    margin-top: 80px;
-    min-height: calc(100vh - 80px);
-}
-
 .page-hero {
-    background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-color) 100%);
     padding: 4rem 0 3rem;
     position: relative;
     overflow: hidden;
@@ -27,9 +20,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -63,363 +53,71 @@
 
 .content-section {
     padding: 4rem 0;
-    background: var(--dark-color);
 }
 
 .jobs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
-/* ===========================================
-   CATÉGORIES DE MÉTIERS
-   =========================================== */
-
-.job-category {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 2.5rem;
+.job-card {
+    background: var(--surface-color);
     border: 1px solid var(--border-color);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-.job-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    transition: var(--transition);
-}
-
-.job-category:hover {
+.job-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
 }
 
-.job-category:hover::before {
-    width: 8px;
+.job-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: block;
 }
 
-.job-category h2 {
+.job-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    color: var(--text-primary);
+    margin: 0;
 }
 
-/* ===========================================
-   ITEMS DE MÉTIERS
-   =========================================== */
-
-.job-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.job-item {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 10px;
-    padding: 1.5rem;
-    border-left: 3px solid transparent;
-    transition: var(--transition);
-    position: relative;
-}
-
-.job-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-left-width: 6px;
-    transform: translateX(10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.job-item h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.job-item h3::before {
-    content: '💼';
+.job-description {
     font-size: 1rem;
-}
-
-.job-details p {
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
 
-/* Informations de salaire */
-.job-details p:last-child {
-    background: rgba(251, 191, 36, 0.1);
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--accent-color);
-    margin-top: 1rem;
-    font-weight: 600;
-    color: var(--accent-color);
-}
-
-/* ===========================================
-   COULEURS SPÉCIFIQUES PAR CATÉGORIE
-   =========================================== */
-
-/* Forces de l'ordre */
-.job-category:nth-child(1) {
-    border-left: 4px solid #1e40af;
-}
-
-.job-category:nth-child(1)::before {
-    background: #1e40af;
-}
-
-.job-category:nth-child(1) h2::after {
-    content: '👮‍♂️';
-    font-size: 1.2rem;
-}
-
-.job-category:nth-child(1) .job-item {
-    border-left-color: #1e40af;
-}
-
-/* Médical */
-.job-category:nth-child(2) {
-    border-left: 4px solid #dc2626;
-}
-
-.job-category:nth-child(2)::before {
-    background: #dc2626;
-}
-
-.job-category:nth-child(2) h2::after {
-    content: '⚕️';
-    font-size: 1.2rem;
-}
-
-.job-category:nth-child(2) .job-item {
-    border-left-color: #dc2626;
-}
-
-/* Artisanat */
-.job-category:nth-child(3) {
-    border-left: 4px solid #ea580c;
-}
-
-.job-category:nth-child(3)::before {
-    background: #ea580c;
-}
-
-.job-category:nth-child(3) h2::after {
-    content: '🔧';
-    font-size: 1.2rem;
-}
-
-.job-category:nth-child(3) .job-item {
-    border-left-color: #ea580c;
-}
-
-/* Commerce */
-.job-category:nth-child(4) {
-    border-left: 4px solid #16a34a;
-}
-
-.job-category:nth-child(4)::before {
-    background: #16a34a;
-}
-
-.job-category:nth-child(4) h2::after {
-    content: '🏪';
-    font-size: 1.2rem;
-}
-
-.job-category:nth-child(4) .job-item {
-    border-left-color: #16a34a;
-}
-
-/* Administration */
-.job-category:nth-child(5) {
-    border-left: 4px solid #7c3aed;
-}
-
-.job-category:nth-child(5)::before {
-    background: #7c3aed;
-}
-
-.job-category:nth-child(5) h2::after {
-    content: '🏛️';
-    font-size: 1.2rem;
-}
-
-.job-category:nth-child(5) .job-item {
-    border-left-color: #7c3aed;
-}
-
-/* ===========================================
-   SECTION D'INFORMATION SUR LES CANDIDATURES
-   =========================================== */
-
-.application-info {
-    background: linear-gradient(135deg, var(--card-bg) 0%, var(--dark-secondary) 100%);
-    border-radius: 12px;
-    padding: 2.5rem;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    margin-top: 3rem;
-}
-
-.application-info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 30% 30%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-.application-info h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.application-info h2 i {
-    color: var(--accent-color);
-    margin-right: 0.75rem;
-}
-
-.application-info p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.application-steps {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    position: relative;
-}
-
-.application-steps li {
-    background: rgba(251, 191, 36, 0.1);
-    padding: 1.25rem 1.5rem;
-    border-radius: 10px;
-    border: 1px solid rgba(251, 191, 36, 0.2);
-    font-weight: 500;
-    transition: var(--transition);
-    cursor: pointer;
-    position: relative;
-    padding-left: 2.5rem;
-}
-
-.application-steps li::before {
-    content: '✓';
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--accent-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.application-steps li:hover {
-    background: rgba(251, 191, 36, 0.15);
-    border-color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.2);
-}
-
-/* ===========================================
-   RESPONSIVE DESIGN
-   =========================================== */
-
+/* Responsive */
 @media (max-width: 768px) {
-    .page-title {
-        font-size: 2.2rem;
-    }
-    
-    .page-subtitle {
-        font-size: 1rem;
-    }
-    
     .jobs-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
     
-    .job-category {
-        padding: 2rem;
-    }
-    
-    .application-info {
-        padding: 2rem;
-    }
-    
-    .application-steps {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    
-    .application-steps li {
-        padding: 1rem 1.25rem 1rem 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .page-hero {
-        padding: 3rem 0 2rem;
-    }
-    
-    .page-title {
-        font-size: 1.8rem;
-    }
-    
-    .job-category {
+    .job-card {
         padding: 1.5rem;
     }
     
-    .job-item {
-        padding: 1rem;
+    .job-icon {
+        font-size: 2.5rem;
     }
     
-    .application-info {
-        padding: 1.5rem;
+    .job-title {
+        font-size: 1.3rem;
     }
-}
-
-.job-category:nth-child(3) h2::after {
-    content: ' 🔧';
-}
-
-.job-category:nth-child(4) h2::after {
-    content: ' 🛒';
-}
-
-.job-category:nth-child(5) h2::after {
-    content: ' 🏢';
 }

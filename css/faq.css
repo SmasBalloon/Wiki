@@ -8,13 +8,7 @@
    LAYOUT PRINCIPAL
    =========================================== */
 
-.main-content {
-    margin-top: 80px;
-    min-height: calc(100vh - 80px);
-}
-
 .page-hero {
-    background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-color) 100%);
     padding: 4rem 0 3rem;
     position: relative;
     overflow: hidden;
@@ -27,9 +21,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -63,7 +54,6 @@
 
 .content-section {
     padding: 4rem 0;
-    background: var(--dark-color);
 }
 
 .faq-grid {
