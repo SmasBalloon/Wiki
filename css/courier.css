@@ -1,0 +1,438 @@
+/* ===========================================
+   COURIER JOB PAGE - Styles spécifiques au métier de coursier
+   =========================================== */
+/* Import du CSS root */
+@import url('root.css');
+
+.job-hero {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.job-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.job-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.job-icon-large {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    animation: courierPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.job-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+}
+
+.job-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Header de la page */
+.page-header {
+    padding: 4rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.page-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.page-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.page-icon i {
+    font-size: 2.5rem;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.page-title-content {
+    flex: 1;
+    text-align: center;
+}
+
+.page-main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Sections générales */
+.job-section {
+    padding: 4rem 0;
+}
+
+.job-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.section-title i {
+    color: #2563eb;
+    font-size: 2rem;
+}
+
+/* Grid des étapes */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.step-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+}
+
+.step-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: #2563eb;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.step-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Section des localisations */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.location-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.location-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: #2563eb;
+}
+
+.location-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.location-item:hover .location-image img {
+    transform: scale(1.05);
+}
+
+.location-content {
+    padding: 1.5rem;
+}
+
+.location-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.location-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Tables des récompenses */
+.table-section {
+    margin-bottom: 3rem;
+}
+
+.table-section:last-child {
+    margin-bottom: 0;
+}
+
+.unlocks-table,
+.rewards-table {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.rewards-table .table-header {
+    grid-template-columns: 0.8fr 1.5fr 1.5fr 1.2fr 0.8fr;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.rewards-table .table-row {
+    grid-template-columns: 0.8fr 1.5fr 1.5fr 1.2fr 0.8fr;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row:hover {
+    background: var(--dark-tertiary);
+}
+
+.table-row .level {
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+.job-navigation {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--dark-tertiary);
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary i {
+    font-size: 1.1rem;
+}
+
+/* Animation */
+@keyframes courierPulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #2563eb;
+    }
+    50% {
+        transform: scale(1.05);
+        color: #1d4ed8;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .page-main-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-description {
+        font-size: 1rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: left;
+    }
+    
+    .rewards-table .table-header,
+    .rewards-table .table-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .table-header > div,
+    .table-row > div {
+        padding: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .table-header > div:last-child,
+    .table-row > div:last-child {
+        border-bottom: none;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-section {
+        padding: 2rem 0;
+    }
+    
+    .step-item {
+        padding: 1.5rem;
+    }
+    
+    .location-content {
+        padding: 1rem;
+    }
+}

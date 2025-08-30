@@ -102,6 +102,46 @@
     margin-bottom: 0;
 }
 
+/* ===========================================
+   STYLES SPÉCIFIQUES PAR MÉTIER
+   =========================================== */
+
+/* Carte Courier - Thème bleu */
+.courier-card {
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.courier-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+.courier-card .job-icon {
+    color: #2563eb;
+    animation: courierPulse 3s ease-in-out infinite;
+}
+
+.courier-card:hover .job-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.3));
+}
+
+.courier-card .job-title {
+    color: #2563eb;
+}
+
+/* Animation spécifique courier */
+@keyframes courierPulse {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.05);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .jobs-grid {
