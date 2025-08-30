@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos - Capitalyx Wiki</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/commands.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-terminal"></i>
+                    Comandos del Servidor
+                </h1>
+                <p class="page-subtitle">Lista completa de comandos disponibles para jugadores en Capitalyx</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Introduction -->
+                <div class="commands-intro">
+                    <h2><i class="fas fa-info-circle"></i> Cómo usar los comandos</h2>
+                    <p>Los comandos te permiten interactuar con el servidor y acceder a diferentes funcionalidades. Simplemente escribe el comando en el chat del juego.</p>
+                    <div class="intro-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Consejo:</strong> Usa <code>/help</code> en el juego para ver una lista rápida de comandos principales.
+                    </div>
+                </div>
+
+                <!-- Commands Grid -->
+                <div class="commands-grid">
+                    <!-- General Commands -->
+                    <div class="command-category">
+                        <div class="category-header">
+                            <h2><i class="fas fa-cogs"></i> Comandos Generales</h2>
+                        </div>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <div class="command-syntax">/help</div>
+                                <div class="command-description">Muestra la lista de comandos principales disponibles.</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax">/time</div>
+                                <div class="command-description">Muestra la hora actual del servidor.</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax">/players</div>
+                                <div class="command-description">Muestra el número de jugadores conectados.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Commands -->
+                    <div class="command-category">
+                        <div class="category-header">
+                            <h2><i class="fas fa-briefcase"></i> Comandos de Trabajos</h2>
+                        </div>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <div class="command-syntax">/job</div>
+                                <div class="command-description">Muestra información sobre tu trabajo actual.</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax">/quitjob</div>
+                                <div class="command-description">Abandona tu trabajo actual.</div>
+                                <div class="command-note">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <strong>Atención:</strong> Perderás tu progreso en el trabajo.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Economy Commands -->
+                    <div class="command-category">
+                        <div class="category-header">
+                            <h2><i class="fas fa-dollar-sign"></i> Comandos Económicos</h2>
+                        </div>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <div class="command-syntax">/pay [id] [cantidad]</div>
+                                <div class="command-description">Da dinero en efectivo a otro jugador.</div>
+                                <div class="command-params">
+                                    <h4>Parámetros:</h4>
+                                    <ul class="param-list">
+                                        <li class="param-item">
+                                            <span class="param-name">id</span>
+                                            <span class="param-desc">- ID del jugador a pagar</span>
+                                        </li>
+                                        <li class="param-item">
+                                            <span class="param-name">cantidad</span>
+                                            <span class="param-desc">- Cantidad a dar</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Commands -->
+                    <div class="command-category">
+                        <div class="category-header">
+                            <h2><i class="fas fa-car"></i> Comandos de Vehículos</h2>
+                        </div>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <div class="command-syntax">/vehicle</div>
+                                <div class="command-description">Abre el menú de gestión de vehículos.</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax">/park</div>
+                                <div class="command-description">Aparca tu vehículo en la ubicación actual.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Communication Commands -->
+                    <div class="command-category">
+                        <div class="category-header">
+                            <h2><i class="fas fa-comments"></i> Comandos de Comunicación</h2>
+                        </div>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <div class="command-syntax">/pm [mensaje]</div>
+                                <div class="command-description">Susurra un mensaje a jugadores muy cercanos.</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax">/discord</div>
+                                <div class="command-description">Muestra el enlace al servidor Discord oficial.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Commands -->
+                    <div class="command-category">
+                        <div class="category-header">
+                            <h2><i class="fas fa-shield-alt"></i> Comandos de Ayuda</h2>
+                        </div>
+                        <div class="commands-list">
+                            <div class="command-item">
+                                <div class="command-syntax">/report [mensaje]</div>
+                                <div class="command-description">Reporta un problema o jugador a los administradores.</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax">/rules</div>
+                                <div class="command-description">Muestra un recordatorio de las reglas principales del servidor.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer-container"></div>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>
