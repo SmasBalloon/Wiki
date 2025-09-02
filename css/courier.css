@@ -140,7 +140,7 @@
 }
 
 .section-title i {
-    color: #2563eb;
+    color: #8b5cf6;
     font-size: 2rem;
 }
 
@@ -170,19 +170,19 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
 }
 
 .step-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: #2563eb;
+    border-color: #8b5cf6;
 }
 
 .step-number {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -191,7 +191,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 .step-content h4 {
@@ -225,7 +225,7 @@
 .location-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: #2563eb;
+    border-color: #8b5cf6;
 }
 
 .location-image {
@@ -284,7 +284,7 @@
 .table-header {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     color: white;
     font-weight: 600;
     font-size: 1rem;
@@ -320,7 +320,7 @@
 
 .table-row .level {
     font-weight: bold;
-    color: #2563eb;
+    color: #8b5cf6;
     font-size: 1.1rem;
 }
 
@@ -346,8 +346,8 @@
 
 .btn-secondary:hover {
     background: var(--dark-tertiary);
-    border-color: #2563eb;
-    color: #2563eb;
+    border-color: #8b5cf6;
+    color: #8b5cf6;
     transform: translateY(-2px);
 }
 
@@ -359,11 +359,11 @@
 @keyframes courierPulse {
     0%, 100% {
         transform: scale(1);
-        color: #2563eb;
+        color: #8b5cf6;
     }
     50% {
         transform: scale(1.05);
-        color: #1d4ed8;
+        color: #7c3aed;
     }
 }
 

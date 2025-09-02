@@ -1,0 +1,799 @@
+/* ===========================================
+   TRAIN CONDUCTOR JOB PAGE - Styles spécifiques au métier de conducteur de train
+   =========================================== */
+/* Import du CSS root */
+@import url('root.css');
+
+.job-hero {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.job-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.job-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.job-icon-large {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    animation: trainPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.job-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+}
+
+.job-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================
+   JOB SECTIONS - Thème sombre
+   =========================================== */
+.job-section {
+    padding: 1rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    border-radius: 2px;
+}
+
+.section-title i {
+    color: #1e40af;
+    margin-right: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(30, 64, 175, 0.3));
+}
+
+/* ===========================================
+   LOCATION SECTION - Nouvelle section avec images
+   =========================================== */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-item {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.location-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: #1e40af;
+}
+
+.location-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.location-item:hover .location-image img {
+    transform: scale(1.05);
+}
+
+.location-content {
+    padding: 2rem;
+}
+
+.location-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.location-title::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: #1e40af;
+    margin-right: 1rem;
+    border-radius: 2px;
+}
+
+.location-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===========================================
+   REQUIREMENTS GRID - Thème sombre
+   =========================================== */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.requirement-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.requirement-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+}
+
+.requirement-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: #1e40af;
+}
+
+.requirement-icon {
+    font-size: 3rem;
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(30, 64, 175, 0.3));
+}
+
+.requirement-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.requirement-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===========================================
+   PAGE HEADER - Titre de page compact
+   =========================================== */
+.page-header {
+    padding: 3rem 0 2rem;
+}
+
+.page-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-icon {
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.page-main-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.page-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===========================================
+   STEPS GRID - Format compact
+   =========================================== */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: #1e40af;
+}
+
+.step-number {
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
+}
+
+.step-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===========================================
+   MISSIONS LIST - Thème sombre
+   =========================================== */
+.missions-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mission-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #2980b9, #3498db);
+}
+
+.mission-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+    border-color: #2980b9;
+}
+
+.mission-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.mission-icon {
+    font-size: 2rem;
+    color: #2980b9;
+    margin-right: 1.5rem;
+    width: 50px;
+    text-align: center;
+    filter: drop-shadow(0 2px 4px rgba(41, 128, 185, 0.3));
+}
+
+.mission-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.mission-description {
+    color: var(--text-secondary);
+    margin: 0;
+    padding-left: 66px;
+    line-height: 1.6;
+}
+
+/* ===========================================
+   REWARDS GRID - Thème sombre
+   =========================================== */
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reward-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.reward-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+.reward-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+    border-color: #3498db;
+}
+
+.reward-icon {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(52, 152, 219, 0.3));
+}
+
+.reward-amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reward-description {
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ===========================================
+   TABLES SECTION - Tableaux compacts
+   =========================================== */
+.table-section {
+    margin-bottom: 3rem;
+}
+
+.table-section:last-child {
+    margin-bottom: 0;
+}
+
+.table-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border-left: 4px solid #2980b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.table-title i {
+    color: #2980b9;
+    filter: drop-shadow(0 2px 4px rgba(41, 128, 185, 0.3));
+}
+
+.rewards-table,
+.unlocks-table {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.table-header {
+    display: grid;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+.rewards-table .table-header {
+    grid-template-columns: 0.8fr 1.2fr 1.5fr 1.2fr 0.8fr;
+}
+
+.unlocks-table .table-header {
+    grid-template-columns: 0.8fr 1.5fr 2fr;
+}
+
+.table-row {
+    display: grid;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    align-items: center;
+    text-align: center;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row:hover {
+    background: rgba(30, 64, 175, 0.1);
+}
+
+.rewards-table .table-row {
+    grid-template-columns: 0.8fr 1.2fr 1.5fr 1.2fr 0.8fr;
+}
+
+.unlocks-table .table-row {
+    grid-template-columns: 0.8fr 1.5fr 2fr;
+}
+
+.table-row > div {
+    padding: 0 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.table-row .level {
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.unlocks-table .table-row > div:nth-child(3) {
+    text-align: center;
+}
+
+/* ===========================================
+   TIPS CONTENT - Thème sombre
+   =========================================== */
+.tips-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tip-item {
+    background: var(--card-bg);
+    border-left: 4px solid #2980b9;
+    border-radius: 0 16px 16px 0;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.tip-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+    border-left-color: #3498db;
+}
+
+.tip-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.tip-title i {
+    color: #2980b9;
+    margin-right: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(41, 128, 185, 0.3));
+}
+
+.tip-description {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ===========================================
+   NAVIGATION SECTION - Thème sombre
+   =========================================== */
+.job-navigation {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    transition: left 0.4s ease;
+    z-index: 1;
+}
+
+.btn-secondary:hover::before {
+    left: 0;
+}
+
+.btn-secondary:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: #1e40af;
+}
+
+.btn-secondary i,
+.btn-secondary span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-secondary i {
+    margin-right: 0.8rem;
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+@keyframes trainPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px rgba(30, 64, 175, 0.3));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 8px 16px rgba(30, 64, 175, 0.5));
+    }
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 2rem 0 1.5rem;
+    }
+    
+    .page-title-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .page-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .page-main-title {
+        font-size: 1.8rem;
+    }
+    
+    .page-description {
+        font-size: 0.95rem;
+    }
+    
+    .job-hero {
+        padding: 3rem 0;
+    }
+    
+    .job-icon-large {
+        font-size: 3rem;
+    }
+    
+    .job-title {
+        font-size: 2.2rem;
+    }
+    
+    .job-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .requirements-grid,
+    .rewards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .requirement-item,
+    .reward-item {
+        padding: 1.5rem;
+    }
+    
+    .mission-description {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+    
+    .mission-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .mission-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .location-item {
+        margin: 0 1rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .table-title {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+    
+    .table-header,
+    .table-row {
+        padding: 0.8rem 0.3rem;
+        font-size: 0.85rem;
+    }
+    
+    .table-row > div {
+        padding: 0 0.3rem;
+        font-size: 0.8rem;
+    }
+    
+    .btn-secondary {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-hero {
+        padding: 3rem 0;
+    }
+    
+    .job-title {
+        font-size: 2rem;
+    }
+    
+    .job-subtitle {
+        font-size: 1rem;
+    }
+    
+    .location-image {
+        height: 200px;
+    }
+    
+    .tip-item,
+    .mission-item,
+    .requirement-item,
+    .reward-item {
+        padding: 1.5rem;
+    }
+}
