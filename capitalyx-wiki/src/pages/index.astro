@@ -1,0 +1,186 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Capitalyx Wiki" description="Votre guide complet pour naviguer et profiter pleinement de l'expérience Capitalyx">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Bienvenue sur le wiki <span class="highlight">Capitalyx</span>
+      </h1>
+      <p class="hero-subtitle">
+        Votre guide complet pour naviguer et profiter pleinement de l'expérience Capitalyx
+      </p>
+      <div class="hero-buttons">
+        <a href="#features" class="btn btn-primary">
+          <i class="fas fa-book-open"></i>
+          Explorer le Wiki
+        </a>
+        <a href="/rules" class="btn btn-secondary">
+          <i class="fas fa-gavel"></i>
+          Règlement
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Que contient ce wiki ?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Documentation Complète</h3>
+          <p>
+            Toutes les informations nécessaires pour comprendre le fonctionnement du serveur
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Guides Détaillés</h3>
+            <p>
+              Tutoriels pas à pas pour maîtriser tous les aspects du roleplay
+            </p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Référence Rapide</h3>
+          <p>Trouvez rapidement les informations que vous cherchez</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3>Toujours à Jour</h3>
+          <p>
+            Contenu régulièrement mis à jour avec les dernières nouveautés
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="quick-links">
+    <div class="container">
+      <h2 class="section-title">Accès Rapide</h2>
+      <div class="quick-links-grid">
+        <a href="/rules" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-gavel"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Règlement</h3>
+            <p>Toutes les règles du serveur à respecter</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/guides" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Guides</h3>
+            <p>Tutoriels pour bien commencer</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/jobs" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Métiers</h3>
+            <p>Découvrir tous les métiers disponibles</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/commands" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Commandes</h3>
+            <p>Liste des commandes utiles</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/faq" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>FAQ</h3>
+            <p>Questions fréquemment posées</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="#" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fab fa-discord"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Discord</h3>
+            <p>Rejoindre la communauté</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started Section -->
+  <section class="getting-started">
+    <div class="container">
+      <div class="getting-started-content">
+        <div class="getting-started-text">
+          <h2>Nouveau sur Capitalyx ?</h2>
+          <p>
+            Commencez par consulter notre guide débutant pour apprendre les bases du serveur et découvrir comment développer votre empire commercial.
+          </p>
+          <div class="getting-started-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <span class="step-text">Lisez le règlement</span>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <span class="step-text">Choisissez votre métier</span>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <span class="step-text">Rejoignez le serveur</span>
+            </div>
+          </div>
+          <a href="/guides" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            Commencer
+          </a>
+        </div>
+        <div class="getting-started-image">
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('../styles/index.css');
+</style>

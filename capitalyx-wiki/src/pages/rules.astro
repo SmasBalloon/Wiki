@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Règlement - Capitalyx Wiki</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/css/root.css" />
-    <link rel="stylesheet" href="/css/rules.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Header will be loaded here -->
-    <div id="header-container"></div>
+---
+import Layout from "../layouts/Layout.astro"
+---
 
-    <!-- Breadcrumbs -->
-    <section class="breadcrumb">
+<Layout title="Reglement" description="reglment du serveur">
+  <section class="breadcrumb">
       <div class="container">
         <nav class="breadcrumb-nav">
           <div class="breadcrumb-item">
@@ -302,67 +288,8 @@
           </div>
         </div>
       </section>
-    </main>
+</Layout>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
-
-    <script src="js/components.js"></script>
-    <script src="js/search.js"></script>
-    <script>
-      // Modal TOC functions
-      function openTOCModal() {
-        const modal = document.getElementById("tocModal");
-        modal.classList.add("open");
-        document.body.style.overflow = "hidden";
-        updateActiveTOC();
-      }
-
-      function closeTOCModal() {
-        const modal = document.getElementById("tocModal");
-        modal.classList.remove("open");
-        document.body.style.overflow = "";
-      }
-
-      // Highlight active section dans la TOC
-      function updateActiveTOC() {
-        const sections = document.querySelectorAll(".rule-category");
-        const tocLinks = document.querySelectorAll(".toc-modal-link");
-
-        let currentSection = "";
-
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            currentSection = section.id;
-          }
-        });
-
-        tocLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + currentSection) {
-            link.classList.add("active");
-          }
-        });
-      }
-
-      // Fermer le modal en cliquant sur le backdrop
-      document.addEventListener("click", function (e) {
-        if (e.target.classList.contains("toc-modal")) {
-          closeTOCModal();
-        }
-      });
-
-      // Raccourci clavier Escape pour fermer
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeTOCModal();
-        }
-      });
-
-      // Event listeners
-      window.addEventListener("scroll", updateActiveTOC);
-      document.addEventListener("DOMContentLoaded", updateActiveTOC);
-    </script>
-  </body>
-</html>
+<style>
+  @import url('../styles/rules.css');
+</style>

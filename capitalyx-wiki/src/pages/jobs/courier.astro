@@ -1,0 +1,187 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout title="livreur / coursier" description="Guide complet pour devenir livreur de colis sur Capitalyx">
+    <main class="main-content">
+        <!-- Titre de la page -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-title-wrapper">
+                    <div class="page-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="page-title-content">
+                        <h1 class="page-main-title">Livreur / Coursier</h1>
+                        <p class="page-description">Guide complet pour devenir livreur de colis sur Capitalyx</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="job-section location-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Où Chercher
+                </h2>
+                <div class="location-grid">
+                    <div class="location-item">
+                        <div class="location-image">
+                            <img src="/assets/img/jobs/courier/courierbuilding.webp" alt="Centre de livraison" loading="lazy">
+                        </div>
+                        <div class="location-content">
+                            <h3 class="location-title">Centre de Livraison</h3>
+                            <p class="location-description">Rendez-vous au centre de livraison pour obtenir votre badge 
+                                et récupérer votre premier véhicule de livraison</p>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-image">
+                            <img src="/assets/img/jobs/courier/couriermap.webp" alt="Localisation sur la carte" loading="lazy">
+                        </div>
+                        <div class="location-content">
+                            <h3 class="location-title">Localisation</h3>
+                            <p class="location-description">Le centre de livraison se trouve dans la zone industrielle, 
+                                près des entrepôts principaux. Consultez la carte pour l'emplacement exact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment commencer -->
+        <section class="job-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-play-circle"></i>
+                    Comment Commencer
+                </h2>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Récupérer le Véhicule</h4>
+                            <p>Activez le marqueur du garage pour faire apparaître votre véhicule de livraison</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Récupérer les Colis</h4>
+                            <p>Suivez le marqueur pour charger les colis dans votre véhicule</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Livrer les Colis</h4>
+                            <p>Livrez les colis aux adresses indiquées et encaissez votre rémunération</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Récompenses et différents niveaux-->
+        <section class="job-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    Déblocages et Récompenses
+                </h2>
+
+                <!-- Tableau des déblocages de tiers et véhicules -->
+                <div class="table-section">
+                    <div class="unlocks-table">
+                        <div class="table-header">
+                            <div>Niveau Requis</div>
+                            <div>Déblocage</div>
+                            <div>Bonus Gains</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">1</div>
+                            <div>Livraisons Locales</div>
+                            <div>Accès aux livraisons de quartier</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">15</div>
+                            <div>Livraisons Express</div>
+                            <div>+20% de gains pour les livraisons urgentes</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">30</div>
+                            <div>Livraisons Fragiles</div>
+                            <div>+35% de gains, bonus de précaution</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">50</div>
+                            <div>Livraisons VIP</div>
+                            <div>+60% de gains pour clients privilégiés</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">70</div>
+                            <div>Livraisons de Nuit</div>
+                            <div>Bonus +25% entre 20h-8h</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tableau des récompenses par tier -->
+                <div class="table-section">
+                    <div class="rewards-table">
+                        <div class="table-header">
+                            <div>Type</div>
+                            <div>Distance</div>
+                            <div>Colis</div>
+                            <div>Gains</div>
+                            <div>XP</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">Local</div>
+                            <div>0-3km</div>
+                            <div>1-3 colis</div>
+                            <div>200-350$</div>
+                            <div>120</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">Express</div>
+                            <div>3-7km</div>
+                            <div>4-6 colis</div>
+                            <div>400-600$</div>
+                            <div>250</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">Fragile</div>
+                            <div>5-12km</div>
+                            <div>2-4 colis</div>
+                            <div>600-900$</div>
+                            <div>350</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="level">VIP</div>
+                            <div>8km+</div>
+                            <div>1-2 colis</div>
+                            <div>1000-1500$</div>
+                            <div>500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="job-navigation">
+            <div class="container">
+                <a href="/jobs.html" class="btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour aux métiers
+                </a>
+            </div>
+        </section>
+    </main>
+
+</Layout>
+
+<style>
+    @import url("../../styles/courier.css");
+</style>

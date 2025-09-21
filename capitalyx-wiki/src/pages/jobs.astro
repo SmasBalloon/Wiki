@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Métiers - Capitalyx Wiki</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/root.css">
-    <link rel="stylesheet" href="/css/jobs.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Header will be loaded here -->
-    <div id="header-container"></div>
+---
+import Layout from "../layouts/Layout.astro"
+---
 
-    <!-- Breadcrumbs -->
+<Layout title="metier" description="metier disponible sur le serveur">
     <section class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb-nav">
                 <div class="breadcrumb-item">
                     <i class="fas fa-home breadcrumb-icon"></i>
-                    <a href="index.html">Accueil</a>
+                    <a href="/">Accueil</a>
                 </div>
                 <span class="breadcrumb-separator">
                     <i class="fas fa-chevron-right"></i>
@@ -48,56 +37,56 @@
             <div class="container">
                 <div class="jobs-grid">
                     <!-- Bus -->
-                    <a href="/jobs/busdriver.html" class="job-card">
+                    <a href="/jobs/busdriver" class="job-card">
                         <i class="fas fa-bus job-icon"></i>
                         <h3 class="job-title">Chauffeur de Bus</h3>
                         <p class="job-description">Transport public des citoyens</p>
                     </a>
 
                     <!-- Camions -->
-                    <a href="#" class="job-card">
+                    <a href="/jobs/truckdriver" class="job-card">
                         <i class="fas fa-truck job-icon"></i>
                         <h3 class="job-title">Chauffeur de Camion</h3>
                         <p class="job-description">Transport de marchandises</p>
                     </a>
 
                     <!-- Hélicoptère -->
-                    <a href="#" class="job-card">
+                    <a href="/jobs/helicopterdriver" class="job-card">
                         <i class="fas fa-helicopter job-icon"></i>
                         <h3 class="job-title">Pilote d'Hélicoptère</h3>
                         <p class="job-description">Transport aérien et missions spéciales</p>
                     </a>
 
                     <!-- Avions -->
-                    <a href="#" class="job-card">
+                    <a href="/jobs/avionpilot" class="job-card">
                         <i class="fas fa-plane job-icon"></i>
                         <h3 class="job-title">Pilote d'Avion</h3>
                         <p class="job-description">Transport aérien longue distance</p>
                     </a>
 
                     <!-- EMS -->
-                    <a href="#" class="job-card">
+                    <a href="/jobs/ems" class="job-card">
                         <i class="fas fa-ambulance job-icon"></i>
                         <h3 class="job-title">EMS / Ambulancier</h3>
                         <p class="job-description">Services médicaux d'urgence</p>
                     </a>
 
                     <!-- Taxi -->
-                    <a href="/jobs/cab.html" class="job-card">
+                    <a href="/jobs/cab" class="job-card">
                         <i class="fas fa-taxi job-icon"></i>
                         <h3 class="job-title">Chauffeur de Taxi</h3>
                         <p class="job-description">Transport privé de passagers</p>
                     </a>
 
                     <!-- Livreur/Transporteur -->
-                    <a href="/jobs/courier.html" class="job-card courier-card">
+                    <a href="/jobs/courier" class="job-card courier-card">
                         <i class="fas fa-shipping-fast job-icon"></i>
                         <h3 class="job-title">Livreur / Transporteur</h3>
                         <p class="job-description">Livraison et transport de colis</p>
                     </a>
 
                     <!-- Conducteur de Train -->
-                    <a href="/jobs/trainconductor.html" class="job-card">
+                    <a href="/jobs/trainconductor" class="job-card">
                         <i class="fas fa-train job-icon"></i>
                         <h3 class="job-title">Conducteur de Train</h3>
                         <p class="job-description">Conduite de trains</p>
@@ -108,21 +97,21 @@
                 <div class="quick-navigation">
                     <h3><i class="fas fa-compass"></i> Navigation rapide</h3>
                     <div class="nav-links">
-                        <a href="rules.html" class="nav-link-card">
+                        <a href="rules" class="nav-link-card">
                             <i class="fas fa-gavel"></i>
                             <div>
                                 <h4>Règlement</h4>
                                 <p>Règles des métiers et activités</p>
                             </div>
                         </a>
-                        <a href="guides.html" class="nav-link-card">
+                        <a href="guides" class="nav-link-card">
                             <i class="fas fa-book-open"></i>
                             <div>
                                 <h4>Guides</h4>
                                 <p>Comment choisir son métier</p>
                             </div>
                         </a>
-                        <a href="commands.html" class="nav-link-card">
+                        <a href="commands" class="nav-link-card">
                             <i class="fas fa-terminal"></i>
                             <div>
                                 <h4>Commandes</h4>
@@ -134,11 +123,8 @@
             </div>
         </section>
     </main>
+</Layout>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
-
-    <script src="js/components.js"></script>
-    <script src="js/search.js"></script>
-</body>
-</html>
+<style>
+    @import url("../styles/jobs.css");
+</style>

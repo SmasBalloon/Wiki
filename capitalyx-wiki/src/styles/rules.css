@@ -1,0 +1,503 @@
+/* ===========================================
+   RULES PAGE - Styles spécifiques aux pages de règlement
+   =========================================== */
+/* Import du CSS root */
+@import url('root.css');
+
+/* ===========================================
+   LAYOUT PRINCIPAL
+   =========================================== */
+.page-hero {
+    padding: 4rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    position: relative;
+}
+
+.page-title i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* ===========================================
+   SECTION DE CONTENU
+   =========================================== */
+
+.content-section {
+    padding: 4rem 0;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* ===========================================
+   CATÉGORIES DE RÈGLES
+   =========================================== */
+
+.rule-category {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.rule-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.category-header i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 8px;
+}
+
+.category-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* ===========================================
+   ITEMS DE RÈGLES
+   =========================================== */
+
+.rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rule-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.rule-number {
+    background: var(--primary-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.sanction-icon {
+    background: #ef4444;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sanction-icon i {
+    font-size: 0.9rem;
+}
+
+.rule-content {
+    flex: 1;
+}
+
+.rule-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rule-content h3 i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.rule-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ===========================================
+   COULEURS SPÉCIFIQUES PAR CATÉGORIE
+   =========================================== */
+
+/* Règles des métiers */
+.rule-category:nth-child(2)::before {
+    background: var(--accent-color);
+}
+
+.rule-category:nth-child(2) .category-header i {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--accent-color);
+}
+
+.rule-category:nth-child(2) .rule-number {
+    background: var(--accent-color);
+}
+
+/* Règles de gameplay */
+.rule-category:nth-child(3)::before {
+    background: #10b981;
+}
+
+.rule-category:nth-child(3) .category-header i {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.rule-category:nth-child(3) .rule-number {
+    background: #10b981;
+}
+
+.rule-category:nth-child(3) .rule-content h3 i {
+    color: #10b981;
+}
+
+/* ===========================================
+   SECTION DES SANCTIONS
+   =========================================== */
+
+.rule-category.sanctions {
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    background: var(--card-bg);
+}
+
+.rule-category.sanctions::before {
+    background: #ef4444;
+    width: 6px;
+}
+
+.rule-category.sanctions .category-header i {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.rule-category.sanctions .category-header h2 {
+    color: #fca5a5;
+}
+
+/* ===========================================
+   NAVIGATION RAPIDE
+   =========================================== */
+
+.quick-navigation {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.quick-navigation h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quick-navigation h3 i {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.nav-link-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-link-card i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.nav-link-card div {
+    flex: 1;
+}
+
+.nav-link-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-color);
+}
+
+.nav-link-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ===========================================
+   AVERTISSEMENT IMPORTANT
+   =========================================== */
+
+.important-notice {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.important-notice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.important-notice h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fca5a5;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.important-notice h2 i {
+    color: #ef4444;
+    margin-right: 0.75rem;
+}
+
+.important-notice p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    position: relative;
+    line-height: 1.7;
+}
+
+.important-notice strong {
+    color: #fca5a5;
+    font-weight: 600;
+}
+
+/* ===========================================
+   COLOR PREVIEW SECTION
+   =========================================== */
+
+.color-preview-section {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-color);
+}
+
+.preview-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.color-option {
+    margin-bottom: 2.5rem;
+}
+
+.color-option h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.color-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.preview-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.preview-card span {
+    font-weight: 600;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Option 1 - Tons sombres avec accents colorés */
+.option1-general { background: #16213e; }
+.option1-jobs { background: #2d1b35; }
+.option1-gameplay { background: #1e3a2b; }
+.option1-sanctions { background: #3a1e1e; }
+
+/* Option 2 - Gradients subtils */
+.option2-general { background: linear-gradient(135deg, #2a3d5a 0%, #1e2a3a 100%); }
+.option2-jobs { background: linear-gradient(135deg, #5a3d2a 0%, #3a2a1e 100%); }
+.option2-gameplay { background: linear-gradient(135deg, #2a5a3d 0%, #1e3a2a 100%); }
+.option2-sanctions { background: linear-gradient(135deg, #5a2a2a 0%, #3a1e1e 100%); }
+
+/* Option 3 - Tons chauds et froids */
+.option3-general { background: #40407a; }
+.option3-jobs { background: #706fd3; }
+.option3-gameplay { background: #34495e; }
+.option3-sanctions { background: #c0392b; }
+
+/* Option 4 - Palette moderne */
+.option4-general { background: #1e293b; }
+.option4-jobs { background: #312e81; }
+.option4-gameplay { background: #065f46; }
+.option4-sanctions { background: #991b1b; }
+
+/* Option 5 - Tons neutres avec couleurs vives */
+.option5-general { background: #27272a; }
+.option5-jobs { background: #422006; }
+.option5-gameplay { background: #14532d; }
+.option5-sanctions { background: #450a0a; }
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .rules-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .rule-category {
+        padding: 2rem;
+    }
+    
+    .important-notice {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 3rem 0 2rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .rule-category {
+        padding: 1.5rem;
+    }
+    
+    .rule-item {
+        padding: 1rem;
+    }
+    
+    .important-notice {
+        padding: 1.5rem;
+    }
+}

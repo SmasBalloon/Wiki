@@ -71,7 +71,6 @@
     border-radius: 12px;
     padding: 2.5rem;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
     position: relative;
     overflow: hidden;
 }
@@ -84,31 +83,34 @@
     width: 4px;
     height: 100%;
     background: var(--accent-color);
-    transition: var(--transition);
 }
 
-.guide-category:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-color);
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
 }
 
-.guide-category:hover::before {
-    width: 8px;
+.category-header i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 8px;
 }
 
-.guide-category h2 {
+.category-header h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-color);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.guide-category h2::before {
-    font-size: 1.3rem;
+    margin: 0;
 }
 
 /* ===========================================
@@ -125,31 +127,44 @@
     background: rgba(255, 255, 255, 0.02);
     border-radius: 10px;
     padding: 1.5rem;
-    border-left: 3px solid transparent;
-    transition: var(--transition);
-    position: relative;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.guide-item:hover {
-    background: rgba(251, 191, 36, 0.05);
-    border-left-color: var(--accent-color);
-    transform: translateX(8px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+.guide-icon {
+    background: var(--accent-color);
+    color: var(--dark-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.guide-item h3 {
+.guide-icon i {
+    font-size: 0.9rem;
+}
+
+.guide-content {
+    flex: 1;
+}
+
+.guide-content h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.guide-item h3::before {
-    content: '📚';
-    font-size: 1rem;
+.guide-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0 0 1rem 0;
 }
 
 /* ===========================================
@@ -213,10 +228,13 @@
 }
 
 .guide-tips ul li::before {
-    content: '💡';
+    content: '';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
     top: 0;
+    color: var(--primary-color);
 }
 
 /* Listes de lieux */
@@ -240,24 +258,33 @@
 }
 
 .locations-list ul li::before {
-    content: '📍';
+    content: '';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
     top: 0;
+    color: #3b82f6;
 }
 
 .money-methods ul li::before {
-    content: '💰';
+    content: '';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
     top: 0;
+    color: #3b82f6;
 }
 
 .bank-info ul li::before {
-    content: '🏦';
+    content: '';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
     top: 0;
+    color: #3b82f6;
 }
 
 /* Commandes de chat */
@@ -275,41 +302,152 @@
     padding: 0.75rem 1rem;
     margin-bottom: 0.75rem;
     border-radius: 6px;
-    color: var(--accent-color);
-    border: 1px solid rgba(251, 191, 36, 0.2);
-    transition: var(--transition);
-}
-
-.chat-commands ul li:hover {
-    background: rgba(251, 191, 36, 0.1);
-    border-color: var(--accent-color);
-    transform: translateX(5px);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
 }
 
 /* ===========================================
    COULEURS SPÉCIFIQUES PAR CATÉGORIE
    =========================================== */
 
+/* Guides Débutant */
 .guide-category:nth-child(1)::before { background: #10b981; }
-.guide-category:nth-child(1):hover .guide-item { border-left-color: #10b981; }
+.guide-category:nth-child(1) .category-header i {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+.guide-category:nth-child(1) .guide-icon { background: #10b981; }
+.guide-category:nth-child(1) .guide-steps ol {
+    background: rgba(16, 185, 129, 0.08);
+    border-left-color: #10b981;
+}
+.guide-category:nth-child(1) .guide-steps ol li::before { background: #10b981; }
+.guide-category:nth-child(1) .guide-tips ul {
+    background: rgba(16, 185, 129, 0.08);
+    border-left-color: #10b981;
+}
+.guide-category:nth-child(1) .guide-tips ul li::before { color: #10b981; }
 
+/* Zones d'Activité */
 .guide-category:nth-child(2)::before { background: #3b82f6; }
-.guide-category:nth-child(2):hover .guide-item { border-left-color: #3b82f6; }
+.guide-category:nth-child(2) .category-header i {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+.guide-category:nth-child(2) .guide-icon { background: #3b82f6; }
+.guide-category:nth-child(2) .locations-list ul { border-left-color: #3b82f6; }
 
+/* Métiers & Business */
 .guide-category:nth-child(3)::before { background: #f59e0b; }
-.guide-category:nth-child(3):hover .guide-item { border-left-color: #f59e0b; }
+.guide-category:nth-child(3) .category-header i {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+.guide-category:nth-child(3) .guide-icon { background: #f59e0b; }
+.guide-category:nth-child(3) .money-methods ul { border-left-color: #f59e0b; }
+.guide-category:nth-child(3) .bank-info ul { border-left-color: #f59e0b; }
+.guide-category:nth-child(3) .money-methods ul li::before { color: #f59e0b; }
+.guide-category:nth-child(3) .bank-info ul li::before { color: #f59e0b; }
 
+/* Communication & Coopération */
 .guide-category:nth-child(4)::before { background: #8b5cf6; }
-.guide-category:nth-child(4):hover .guide-item { border-left-color: #8b5cf6; }
+.guide-category:nth-child(4) .category-header i {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+}
+.guide-category:nth-child(4) .guide-icon { background: #8b5cf6; }
+.guide-category:nth-child(4) .chat-commands ul { border-left-color: #8b5cf6; }
+.guide-category:nth-child(4) .chat-commands ul li {
+    color: #8b5cf6;
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* Factions & Bonus */
+.guide-category:nth-child(5)::before { background: #ef4444; }
+.guide-category:nth-child(5) .category-header i {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+.guide-category:nth-child(5) .guide-icon { background: #ef4444; }
+.guide-category:nth-child(5) .chat-commands ul { border-left-color: #ef4444; }
+.guide-category:nth-child(5) .chat-commands ul li {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.2);
+}
 
 /* ===========================================
-   EMOJIS POUR LES CATÉGORIES
+   NAVIGATION RAPIDE
    =========================================== */
 
-.guide-category:nth-child(1) h2::before { content: '🎮'; }
-.guide-category:nth-child(2) h2::before { content: '🗺️'; }
-.guide-category:nth-child(3) h2::before { content: '💰'; }
-.guide-category:nth-child(4) h2::before { content: '�'; }
+.quick-navigation {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.quick-navigation h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quick-navigation h3 i {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.nav-link-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-link-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.nav-link-card div {
+    flex: 1;
+}
+
+.nav-link-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-color);
+}
+
+.nav-link-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
 
 /* ===========================================
    RESPONSIVE DESIGN

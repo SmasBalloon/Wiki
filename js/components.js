@@ -1,3 +1,51 @@
+// Fonctions globales pour le modal de recherche (définies en premier)
+window.openSearchModal = function() {
+    console.log('openSearchModal appelée');
+    if (window.wikiSearch) {
+        console.log('Utilisation de wikiSearch.openModal()');
+        window.wikiSearch.openModal();
+    } else {
+        // Si WikiSearch n'est pas encore chargé, l'ouvrir manuellement
+        console.log('WikiSearch pas disponible, ouverture manuelle');
+        const modal = document.getElementById('searchModal');
+        console.log('Modal trouvé:', modal);
+        if (modal) {
+            console.log('Modal styles avant:', window.getComputedStyle(modal).display, window.getComputedStyle(modal).opacity, window.getComputedStyle(modal).zIndex);
+            modal.classList.add('open');
+            modal.style.display = 'block';
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+            modal.style.zIndex = '999999';
+            modal.style.background = 'rgba(255, 0, 0, 0.5)'; // Rouge pour debug
+            document.body.style.overflow = 'hidden';
+            console.log('Modal styles après:', window.getComputedStyle(modal).display, window.getComputedStyle(modal).opacity, window.getComputedStyle(modal).zIndex);
+            setTimeout(() => {
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) searchInput.focus();
+            }, 100);
+        } else {
+            console.error('Modal de recherche introuvable !');
+
+            // Debug: lister tous les éléments avec searchModal
+            const allModals = document.querySelectorAll('[id*="search"]');
+            console.log('Éléments avec "search" dans l\'ID:', allModals);
+        }
+    }
+};
+
+window.closeSearchModal = function() {
+    if (window.wikiSearch) {
+        window.wikiSearch.closeModal();
+    } else {
+        // Fermeture manuelle si WikiSearch n'est pas chargé
+        const modal = document.getElementById('searchModal');
+        if (modal) {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+};
+
 // Système de composants réutilisables
 class ComponentLoader {
     constructor() {
@@ -128,8 +176,177 @@ class ComponentLoader {
             this.loadComponent('header', 'header-container'),
             this.loadComponent('footer', 'footer-container')
         ]);
+
+        // Ajouter le modal de recherche si pas déjà présent
+        this.addSearchModal();
+
+        // Debug: vérifier le bouton de recherche après chargement
+        setTimeout(() => {
+            const searchBtn = document.querySelector('.search-btn');
+            console.log('Bouton de recherche trouvé:', searchBtn);
+            if (searchBtn) {
+                console.log('Onclick du bouton:', searchBtn.getAttribute('onclick'));
+
+                // Ajouter un event listener supplémentaire pour être sûr
+                searchBtn.addEventListener('click', function() {
+                    console.log('Bouton de recherche cliqué (event listener)');
+                    window.openSearchModal();
+                });
+            }
+
+            // Test Ctrl+K
+            console.log('openSearchModal disponible:', typeof window.openSearchModal);
+
+            // Forcer l'ajout des boutons s'ils ne sont pas présents
+            const headerActions = document.querySelector('.header-actions');
+            if (headerActions) {
+                console.log('Header actions trouvé, vérification des boutons...');
+
+                // Vérifier et ajouter le bouton de thème
+                if (!document.querySelector('.theme-toggle') && window.themeSystem) {
+                    console.log('Ajout forcé du bouton de thème');
+                    window.themeSystem.createThemeToggle();
+                }
+
+                // Vérifier et ajouter le bouton de police
+                if (!document.querySelector('.font-controls') && window.fontControls) {
+                    console.log('Ajout forcé du bouton de police');
+                    window.fontControls.createFontControls();
+                }
+            }
+        }, 2000); // Augmenté à 2 secondes pour laisser le temps aux scripts de se charger
+    }
+
+    // Ajouter le modal de recherche
+    addSearchModal() {
+        if (document.getElementById('searchModal')) {
+            console.log('Modal de recherche déjà présent');
+            return; // Déjà présent
+        }
+
+        console.log('Ajout du modal de recherche...');
+
+        const modalHTML = `
+            <!-- Search Modal -->
+            <div class="search-modal" id="searchModal">
+                <div class="search-modal-backdrop" onclick="closeSearchModal()"></div>
+                <div class="search-modal-content">
+                    <div class="search-modal-header">
+                        <h3>Rechercher dans le wiki</h3>
+                        <button class="search-modal-close" onclick="closeSearchModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="search-container">
+                        <!-- Filtres de recherche -->
+                        <div class="search-filters">
+                            <button class="filter-btn active" data-filter="all">Tout</button>
+                            <button class="filter-btn" data-filter="rules">Règlement</button>
+                            <button class="filter-btn" data-filter="guides">Guides</button>
+                            <button class="filter-btn" data-filter="jobs">Métiers</button>
+                            <button class="filter-btn" data-filter="commands">Commandes</button>
+                            <button class="filter-btn" data-filter="faq">FAQ</button>
+                        </div>
+
+                        <!-- Barre de recherche -->
+                        <div class="search-box">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Rechercher dans le wiki... (ex: règles métier, commandes, etc.)" id="searchInput">
+                            <button class="search-clear" id="searchClear">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Résultats de recherche -->
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+
+                    <!-- Raccourcis clavier -->
+                    <div class="search-shortcuts">
+                        <span class="shortcut"><kbd>↑</kbd><kbd>↓</kbd> pour naviguer</span>
+                        <span class="shortcut"><kbd>Enter</kbd> pour sélectionner</span>
+                        <span class="shortcut"><kbd>Esc</kbd> pour fermer</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        console.log('Modal de recherche ajouté au DOM');
+
+        // Charger le script de recherche si pas déjà chargé
+        if (!document.querySelector('script[src*="search.js"]')) {
+            const script = document.createElement('script');
+            script.src = '/js/search.js';
+            document.head.appendChild(script);
+            console.log('Script search.js ajouté');
+        } else {
+            console.log('Script search.js déjà présent');
+        }
+
+        // Charger le script des favoris si pas déjà chargé
+        if (!document.querySelector('script[src*="favorites.js"]')) {
+            const favScript = document.createElement('script');
+            favScript.src = '/js/favorites.js';
+            document.head.appendChild(favScript);
+            console.log('Script favorites.js ajouté');
+        } else {
+            console.log('Script favorites.js déjà présent');
+        }
+
+        // Charger le script de progression de lecture si pas déjà chargé
+        if (!document.querySelector('script[src*="reading-progress.js"]')) {
+            const progressScript = document.createElement('script');
+            progressScript.src = '/js/reading-progress.js';
+            document.head.appendChild(progressScript);
+            console.log('Script reading-progress.js ajouté');
+        } else {
+            console.log('Script reading-progress.js déjà présent');
+        }
+
+        // Charger le script du système de thème si pas déjà chargé
+        if (!document.querySelector('script[src*="theme-system.js"]')) {
+            const themeScript = document.createElement('script');
+            themeScript.src = '/js/theme-system.js';
+            document.head.appendChild(themeScript);
+            console.log('Script theme-system.js ajouté');
+        } else {
+            console.log('Script theme-system.js déjà présent');
+        }
+
+        // Charger le script des améliorations mobiles si pas déjà chargé
+        if (!document.querySelector('script[src*="mobile-enhancements.js"]')) {
+            const mobileScript = document.createElement('script');
+            mobileScript.src = '/js/mobile-enhancements.js';
+            document.head.appendChild(mobileScript);
+            console.log('Script mobile-enhancements.js ajouté');
+        } else {
+            console.log('Script mobile-enhancements.js déjà présent');
+        }
+
+        // Charger le script des contrôles de police si pas déjà chargé
+        if (!document.querySelector('script[src*="font-controls.js"]')) {
+            const fontScript = document.createElement('script');
+            fontScript.src = '/js/font-controls.js';
+            document.head.appendChild(fontScript);
+            console.log('Script font-controls.js ajouté');
+        } else {
+            console.log('Script font-controls.js déjà présent');
+        }
+
+        // Charger le script des pages populaires si pas déjà chargé
+        if (!document.querySelector('script[src*="popular-pages.js"]')) {
+            const popularScript = document.createElement('script');
+            popularScript.src = '/js/popular-pages.js';
+            document.head.appendChild(popularScript);
+            console.log('Script popular-pages.js ajouté');
+        } else {
+            console.log('Script popular-pages.js déjà présent');
+        }
     }
 }
+
 
 // Fonction pour changer de langue
 function switchLanguage(targetLang) {
@@ -190,10 +407,18 @@ function switchLanguage(targetLang) {
 document.addEventListener('DOMContentLoaded', async function() {
     const loader = new ComponentLoader();
     await loader.loadAllComponents();
-    
+
     // Autres initialisations
     stickyHeader();
     createBackToTop();
+
+    // Raccourci clavier Ctrl+K pour la recherche
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearchModal();
+        }
+    });
 });
 
 // Changement de style du header lors du scroll

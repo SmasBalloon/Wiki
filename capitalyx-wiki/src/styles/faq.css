@@ -88,15 +88,15 @@
     transition: var(--transition);
 }
 
-.faq-category:hover {
+/* .faq-category:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent-color);
-}
+} */
 
-.faq-category:hover::before {
+/* .faq-category:hover::before {
     width: 8px;
-}
+} */
 
 .faq-category h2 {
     font-size: 1.4rem;
@@ -133,12 +133,12 @@
     position: relative;
 }
 
-.faq-item:hover {
+/* .faq-item:hover {
     background: rgba(251, 191, 36, 0.05);
     border-left-color: var(--accent-color);
     transform: translateX(5px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .faq-item h3 {
     font-size: 1.1rem;

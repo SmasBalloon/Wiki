@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guides - Capitalyx Wiki</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/guides.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -12,143 +13,67 @@
     <!-- Header will be loaded here -->
     <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <section class="page-hero">
-            <div class="container">
-                <h1 class="page-title">
-                    <i class="fas fa-book-open"></i>
-                    Guides du Serveur
-                </h1>
-                <p class="page-subtitle">Tous les guides pour bien commencer votre aventure tycoon sur Capitalyx</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="container">
-                <div class="guides-grid">
-                    <div class="guide-category">
-                        <h2><i class="fas fa-play"></i> Guides Débutant</h2>
-                        <div class="guide-list">
-                            <div class="guide-item">
-                                <h3>Comment Rejoindre le Serveur</h3>
-                                <p>Instructions complètes pour vous connecter à Capitalyx pour la première fois.</p>
-                                <div class="guide-steps">
-                                    <ol>
-                                        <li>Ouvrir FiveM</li>
-                                        <li>Aller dans l'onglet Serveurs</li>
-                                        <li>Rechercher "Capitalyx"</li>
-                                        <li>Cliquer sur Se connecter</li>
-                                    </ol>
-                                </div>
-                            </div>
-                            <div class="guide-item">
-                                <h3>Création de Personnage</h3>
-                                <p>Guide pour créer votre personnage et choisir votre orientation business.</p>
-                                <div class="guide-tips">
-                                    <p><strong>Conseils :</strong></p>
-                                    <ul>
-                                        <li>Choisissez un nom pour votre entrepreneur</li>
-                                        <li>Pensez au type de business qui vous intéresse</li>
-                                        <li>Définissez vos objectifs économiques</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="guide-category">
-                        <h2><i class="fas fa-map"></i> Zones d'Activité</h2>
-                        <div class="guide-list">
-                            <div class="guide-item">
-                                <h3>Lieux de Production</h3>
-                                <p>Découvrez les zones clés pour développer votre business.</p>
-                                <div class="locations-list">
-                                    <ul>
-                                        <li><strong>Zones Agricoles :</strong> Fermes et cultures</li>
-                                        <li><strong>Mines :</strong> Extraction de ressources</li>
-                                        <li><strong>Centres Commerciaux :</strong> Vente et commerce</li>
-                                        <li><strong>Entrepôts :</strong> Stockage et logistique</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="guide-category">
-                        <h2><i class="fas fa-dollar-sign"></i> Métiers & Business</h2>
-                        <div class="guide-list">
-                            <div class="guide-item">
-                                <h3>Choisir son Métier</h3>
-                                <p>Guide pour sélectionner le métier qui correspond à votre style de jeu.</p>
-                                <div class="money-methods">
-                                    <ul>
-                                        <li><strong>Fermier :</strong> Culture et élevage</li>
-                                        <li><strong>Mineur :</strong> Extraction de minerais</li>
-                                        <li><strong>Commerçant :</strong> Achat/vente de biens</li>
-                                        <li><strong>Transporteur :</strong> Logistique et livraisons</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="guide-item">
-                                <h3>Système d'Échanges</h3>
-                                <p>Comment commercer avec d'autres joueurs et bénéficier des bonus de groupe.</p>
-                                <div class="bank-info">
-                                    <p><strong>Méthodes d'échange :</strong></p>
-                                    <ul>
-                                        <li>Vente directe entre joueurs</li>
-                                        <li>Marchés communautaires</li>
-                                        <li>Systèmes de troc</li>
-                                        <li>Bonus de faction/entreprise</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="guide-category">
-                        <h2><i class="fas fa-comments"></i> Communication & Coopération</h2>
-                        <div class="guide-list">
-                            <div class="guide-item">
-                                <h3>Systèmes de Communication</h3>
-                                <p>Guide des différents moyens de communiquer et collaborer.</p>
-                                <div class="chat-commands">
-                                    <ul>
-                                        <li><strong>/trade</strong> - Proposer un échange</li>
-                                        <li><strong>/help</strong> - Demander de l'aide</li>
-                                        <li><strong>/market</strong> - Accéder au marché</li>
-                                        <li><strong>/team</strong> - Communication d'équipe</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="guide-category">
-                        <h2><i class="fas fa-users-cog"></i> Factions & Bonus</h2>
-                        <div class="guide-list">
-                            <div class="guide-item">
-                                <h3>Rejoindre une Faction</h3>
-                                <p>Les factions offrent des avantages pour optimiser votre progression.</p>
-                                <div class="chat-commands">
-                                    <ul>
-                                        <li><strong>Bonus XP :</strong> Progression accélérée dans vos métiers</li>
-                                        <li><strong>Avantages économiques :</strong> Légers bonus sur les gains</li>
-                                        <li><strong>Entraide :</strong> Support et conseils des membres</li>
-                                        <li><strong>Événements :</strong> Accès à des activités spéciales</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    
 
     <!-- Footer will be loaded here -->
     <div id="footer-container"></div>
 
     <script src="js/components.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        // Modal TOC functions
+        function openTOCModal() {
+            const modal = document.getElementById('tocModal');
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            updateActiveTOC();
+        }
+
+        function closeTOCModal() {
+            const modal = document.getElementById('tocModal');
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Highlight active section dans la TOC
+        function updateActiveTOC() {
+            const sections = document.querySelectorAll('.guide-category');
+            const tocLinks = document.querySelectorAll('.toc-modal-link');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    currentSection = section.id;
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Fermer le modal en cliquant sur le backdrop
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('toc-modal')) {
+                closeTOCModal();
+            }
+        });
+
+        // Raccourci clavier Escape pour fermer
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeTOCModal();
+            }
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', updateActiveTOC);
+        document.addEventListener('DOMContentLoaded', updateActiveTOC);
+    </script>
 </body>
 </html>

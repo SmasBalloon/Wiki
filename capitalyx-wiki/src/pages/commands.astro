@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commandes - Capitalyx Wiki</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/root.css">
-    <link rel="stylesheet" href="/css/commands.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Header will be loaded here -->
-    <div id="header-container"></div>
+---
+import Layout from "../layouts/Layout.astro"
+---
 
-    <!-- Breadcrumbs -->
+<Layout title="commande" description="commande pratiques sur le serveur">
+     <!-- Breadcrumbs -->
     <section class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb-nav">
@@ -208,11 +198,8 @@
             </div>
         </section>
     </main>
+</Layout>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
-
-    <script src="/js/components.js"></script>
-    <script src="/js/search.js"></script>
-</body>
-</html>
+<style>
+    @import url("../styles/commands.css");
+</style>
