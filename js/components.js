@@ -178,7 +178,7 @@ class ComponentLoader {
         ]);
 
         // Ajouter le modal de recherche si pas déjà présent
-        this.addSearchModal();
+        await this.addSearchModal();
 
         // Debug: vérifier le bouton de recherche après chargement
         setTimeout(() => {
@@ -218,7 +218,7 @@ class ComponentLoader {
     }
 
     // Ajouter le modal de recherche
-    addSearchModal() {
+    async addSearchModal() {
         if (document.getElementById('searchModal')) {
             console.log('Modal de recherche déjà présent');
             return; // Déjà présent
@@ -226,54 +226,17 @@ class ComponentLoader {
 
         console.log('Ajout du modal de recherche...');
 
-        const modalHTML = `
-            <!-- Search Modal -->
-            <div class="search-modal" id="searchModal">
-                <div class="search-modal-backdrop" onclick="closeSearchModal()"></div>
-                <div class="search-modal-content">
-                    <div class="search-modal-header">
-                        <h3>Rechercher dans le wiki</h3>
-                        <button class="search-modal-close" onclick="closeSearchModal()">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <div class="search-container">
-                        <!-- Filtres de recherche -->
-                        <div class="search-filters">
-                            <button class="filter-btn active" data-filter="all">Tout</button>
-                            <button class="filter-btn" data-filter="rules">Règlement</button>
-                            <button class="filter-btn" data-filter="guides">Guides</button>
-                            <button class="filter-btn" data-filter="jobs">Métiers</button>
-                            <button class="filter-btn" data-filter="commands">Commandes</button>
-                            <button class="filter-btn" data-filter="faq">FAQ</button>
-                        </div>
-
-                        <!-- Barre de recherche -->
-                        <div class="search-box">
-                            <i class="fas fa-search search-icon"></i>
-                            <input type="text" class="search-input" placeholder="Rechercher dans le wiki... (ex: règles métier, commandes, etc.)" id="searchInput">
-                            <button class="search-clear" id="searchClear">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-
-                        <!-- Résultats de recherche -->
-                        <div class="search-results" id="searchResults"></div>
-                    </div>
-
-                    <!-- Raccourcis clavier -->
-                    <div class="search-shortcuts">
-                        <span class="shortcut"><kbd>↑</kbd><kbd>↓</kbd> pour naviguer</span>
-                        <span class="shortcut"><kbd>Enter</kbd> pour sélectionner</span>
-                        <span class="shortcut"><kbd>Esc</kbd> pour fermer</span>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        console.log('Modal de recherche ajouté au DOM');
+        try {
+            const response = await fetch(`${this.basePath}/${this.currentLang}/search-modal.html`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const modalHTML = await response.text();
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            console.log('Modal de recherche ajouté au DOM');
+        } catch (error) {
+            console.error('Erreur lors du chargement du modal de recherche:', error);
+        }
 
         // Charger le script de recherche si pas déjà chargé
         if (!document.querySelector('script[src*="search.js"]')) {
