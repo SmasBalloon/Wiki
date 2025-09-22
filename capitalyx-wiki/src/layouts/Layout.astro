@@ -812,7 +812,7 @@ const { title, description = "Votre guide complet pour naviguer et profiter plei
         window.openTOCModal = function() {
           const modal = document.getElementById('tocModal');
           if (modal) {
-            modal.style.display = 'flex';
+            modal.classList.add('open');
             document.body.style.overflow = 'hidden';
           }
         };
@@ -820,7 +820,7 @@ const { title, description = "Votre guide complet pour naviguer et profiter plei
         window.closeTOCModal = function() {
           const modal = document.getElementById('tocModal');
           if (modal) {
-            modal.style.display = 'none';
+            modal.classList.remove('open');
             document.body.style.overflow = '';
           }
         };
