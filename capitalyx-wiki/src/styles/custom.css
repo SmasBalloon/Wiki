@@ -1,0 +1,140 @@
+/* Styles personnalisés pour le wiki Capitalyx */
+
+:root {
+  --sl-color-accent-low: #2d1b69;
+  --sl-color-accent: #dc2626;
+  --sl-color-accent-high: #fecaca;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #f8fafc;
+  --sl-color-gray-2: #f1f5f9;
+  --sl-color-gray-3: #e2e8f0;
+  --sl-color-gray-4: #cbd5e1;
+  --sl-color-gray-5: #94a3b8;
+  --sl-color-gray-6: #64748b;
+  --sl-color-black: #0f172a;
+}
+
+/* Theme sombre */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #1e1b4b;
+  --sl-color-accent: #ef4444;
+  --sl-color-accent-high: #fee2e2;
+  --sl-color-white: #0f172a;
+  --sl-color-gray-1: #1e293b;
+  --sl-color-gray-2: #334155;
+  --sl-color-gray-3: #475569;
+  --sl-color-gray-4: #64748b;
+  --sl-color-gray-5: #94a3b8;
+  --sl-color-gray-6: #cbd5e1;
+  --sl-color-black: #f8fafc;
+}
+
+/* Personnalisation du logo */
+.sl-flex {
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Style pour les cartes */
+.sl-card {
+  background: linear-gradient(135deg, rgb(var(--sl-color-gray-7)), rgb(var(--sl-color-gray-6)));
+  border: 1px solid rgb(var(--sl-color-gray-5));
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(220, 38, 38, 0.3);
+}
+
+/* Style pour le hero */
+.hero > .sl-flex {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #dc2626, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Style pour la navigation */
+.sl-sidebar-item[aria-current="page"] > .sl-sidebar-item-content {
+  background: linear-gradient(135deg, rgb(var(--sl-color-accent-low)), rgb(var(--sl-color-accent)));
+  color: white;
+  border-radius: 0.5rem;
+}
+
+/* Amélioration des boutons */
+.sl-link-button {
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sl-link-button[data-variant="primary"] {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  border: none;
+}
+
+.sl-link-button[data-variant="primary"]:hover {
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+/* Style pour les icônes */
+.sl-icon {
+  color: rgb(var(--sl-color-accent));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .sl-card {
+    padding: 1rem;
+  }
+}
+
+/* Animation pour les cardes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sl-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Style pour les bannières */
+.sl-banner {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(239, 68, 68, 0.1));
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 0.75rem;
+}
+
+.sl-banner a {
+  color: rgb(var(--sl-color-accent));
+  font-weight: 600;
+  text-decoration: underline;
+}

@@ -1,0 +1,285 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout title="Rules" description="Server rules">
+  <section class="breadcrumb">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <div class="breadcrumb-item">
+            <i class="fas fa-home breadcrumb-icon"></i>
+            <a href="index.html">Home</a>
+          </div>
+          <span class="breadcrumb-separator">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+          <div class="breadcrumb-item active">
+            <i class="fas fa-gavel breadcrumb-icon"></i>
+            <span>Rules</span>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <h1 class="page-title">
+            <i class="fas fa-gavel"></i>
+            Server Rules
+          </h1>
+          <p class="page-subtitle">
+            All the rules to follow for a chill and collaborative experience on Capitalyx
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="container">
+          <!-- Fixed TOC button -->
+          <button
+            class="toc-fixed-button"
+            onclick="openTOCModal()"
+            title="Table of contents"
+          >
+            <i class="fas fa-list"></i>
+          </button>
+
+          <!-- TOC Modal -->
+          <div class="toc-modal" id="tocModal">
+            <div class="toc-modal-content">
+              <div class="toc-modal-header">
+                <h3 class="toc-modal-title">
+                  <i class="fas fa-list"></i>
+                  Table of Contents
+                </h3>
+                <button class="toc-modal-close" onclick="closeTOCModal()">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <ul class="toc-modal-list">
+                <li class="toc-modal-item">
+                  <a
+                    href="#general-rules"
+                    class="toc-modal-link"
+                    onclick="closeTOCModal()"
+                  >
+                    <i class="fas fa-users"></i>
+                    General Rules
+                  </a>
+                </li>
+                <li class="toc-modal-item">
+                  <a
+                    href="#job-rules"
+                    class="toc-modal-link"
+                    onclick="closeTOCModal()"
+                  >
+                    <i class="fas fa-briefcase"></i>
+                    Job Rules
+                  </a>
+                </li>
+                <li class="toc-modal-item">
+                  <a
+                    href="#gameplay-rules"
+                    class="toc-modal-link"
+                    onclick="closeTOCModal()"
+                  >
+                    <i class="fas fa-gamepad"></i>
+                    Gameplay Rules
+                  </a>
+                </li>
+                <li class="toc-modal-item">
+                  <a
+                    href="#sanctions"
+                    class="toc-modal-link"
+                    onclick="closeTOCModal()"
+                  >
+                    <i class="fas fa-gavel"></i>
+                    Sanctions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-category" id="general-rules">
+              <div class="category-header">
+                <i class="fas fa-users"></i>
+                <h2>General Rules</h2>
+              </div>
+              <div class="rule-list">
+                <div class="rule-item">
+                  <div class="rule-number"><i class="fas fa-heart"></i></div>
+                  <div class="rule-content">
+                    <h3>Respect and Courtesy</h3>
+                    <p>
+                      Any form of disrespect towards other players or staff is strictly forbidden.
+                    </p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="rule-number">
+                    <i class="fas fa-comment-dots"></i>
+                  </div>
+                  <div class="rule-content">
+                    <h3>Appropriate Language</h3>
+                    <p>
+                      Insults, discriminatory or hateful remarks are not tolerated.
+                    </p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="rule-number"><i class="fas fa-ban"></i></div>
+                  <div class="rule-content">
+                    <h3>No Advertising</h3>
+                    <p>
+                      Any form of advertising for other servers or external services is prohibited.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-category" id="job-rules">
+              <div class="category-header">
+                <i class="fas fa-briefcase"></i>
+                <h2>Job Rules</h2>
+              </div>
+              <div class="rule-list">
+                <div class="rule-item">
+                  <div class="rule-number"><i class="fas fa-user-tie"></i></div>
+                  <div class="rule-content">
+                    <h3>Job Choice</h3>
+                    <p>
+                      Each player is free to choose their job and can change it at any time.
+                    </p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="rule-number">
+                    <i class="fas fa-hands-helping"></i>
+                  </div>
+                  <div class="rule-content">
+                    <h3>Encouraged Cooperation</h3>
+                    <p>
+                      Resource sharing and cooperation between players are highly encouraged to build a supportive community.
+                    </p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="rule-number">
+                    <i class="fas fa-balance-scale"></i>
+                  </div>
+                  <div class="rule-content">
+                    <h3>Fair Trade</h3>
+                    <p>
+                      All trades must be fair, with no scams or exploitation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-category" id="gameplay-rules">
+              <div class="category-header">
+                <i class="fas fa-gamepad"></i>
+                <h2>Gameplay Rules</h2>
+              </div>
+              <div class="rule-list">
+                <div class="rule-item">
+                  <div class="rule-number"><i class="fas fa-leaf"></i></div>
+                  <div class="rule-content">
+                    <h3>Chill Atmosphere</h3>
+                    <p>
+                      The server promotes a relaxed and friendly atmosphere. Avoid aggressive behavior.
+                    </p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="rule-number"><i class="fas fa-hammer"></i></div>
+                  <div class="rule-content">
+                    <h3>No Griefing</h3>
+                    <p>
+                      Destroying or sabotaging other players' work intentionally is strictly prohibited.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-category sanctions" id="sanctions">
+              <div class="category-header">
+                <i class="fas fa-gavel"></i>
+                <h2>Sanctions</h2>
+              </div>
+              <div class="rule-list">
+                <div class="rule-item">
+                  <div class="sanction-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <div class="rule-content">
+                    <h3>Warning</h3>
+                    <p>
+                      First level of sanction for minor offenses.
+                    </p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="sanction-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="rule-content">
+                    <h3>Temporary Kick</h3>
+                    <p>Temporary exclusion from the server from 1 hour to 7 days.</p>
+                  </div>
+                </div>
+                <div class="rule-item">
+                  <div class="sanction-icon">
+                    <i class="fas fa-times-circle"></i>
+                  </div>
+                  <div class="rule-content">
+                    <h3>Ban</h3>
+                    <p>
+                      Permanent exclusion for severe offenses or repeat violations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div class="quick-navigation">
+            <h3><i class="fas fa-compass"></i> Quick Navigation</h3>
+            <div class="nav-links">
+              <a href="guides.html" class="nav-link-card">
+                <i class="fas fa-book-open"></i>
+                <div>
+                  <h4>Beginner Guides</h4>
+                  <p>First steps on the server</p>
+                </div>
+              </a>
+              <a href="commands.html" class="nav-link-card">
+                <i class="fas fa-terminal"></i>
+                <div>
+                  <h4>Commands</h4>
+                  <p>List of useful commands</p>
+                </div>
+              </a>
+              <a href="jobs.html" class="nav-link-card">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <h4>Jobs</h4>
+                  <p>Discover available activities</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+</Layout>
+
+<style>
+  @import url('../../styles/rules.css');
+</style>

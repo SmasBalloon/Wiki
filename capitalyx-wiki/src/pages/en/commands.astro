@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commandes - Capitalyx Wiki</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/root.css">
-    <link rel="stylesheet" href="/css/commands.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Header will be loaded here -->
-    <div id="header-container"></div>
+---
+import Layout from "../../layouts/Layout.astro"
+---
 
-    <!-- Breadcrumbs -->
+<Layout title="Commands" description="Useful server commands">
+     <!-- Breadcrumbs -->
     <section class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb-nav">
                 <div class="breadcrumb-item">
                     <i class="fas fa-home breadcrumb-icon"></i>
-                    <a href="index.html">Accueil</a>
+                    <a href="index.html">Home</a>
                 </div>
                 <span class="breadcrumb-separator">
                     <i class="fas fa-chevron-right"></i>
                 </span>
                 <div class="breadcrumb-item active">
                     <i class="fas fa-terminal breadcrumb-icon"></i>
-                    <span>Commandes</span>
+                    <span>Commands</span>
                 </div>
             </nav>
         </div>
@@ -38,9 +28,9 @@
             <div class="container">
                 <h1 class="page-title">
                     <i class="fas fa-terminal"></i>
-                    Commandes du Serveur
+                    Server Commands
                 </h1>
-                <p class="page-subtitle">Liste complète des commandes disponibles pour les joueurs sur Capitalyx</p>
+                <p class="page-subtitle">Complete list of available commands for players on Capitalyx</p>
             </div>
         </section>
 
@@ -48,11 +38,11 @@
             <div class="container">
                 <!-- Introduction -->
                 <div class="commands-intro">
-                    <h2><i class="fas fa-info-circle"></i> Comment utiliser les commandes</h2>
-                    <p>Les commandes vous permettent d'interagir avec le serveur et d'accéder aux différentes fonctionnalités. Tapez simplement la commande dans le chat du jeu.</p>
+                    <h2><i class="fas fa-info-circle"></i> How to Use Commands</h2>
+                    <p>Commands allow you to interact with the server and access various features. Simply type the command in the in-game chat.</p>
                     <div class="intro-tip">
                         <i class="fas fa-lightbulb"></i>
-                        <strong>Astuce :</strong> Utilisez <code>/help</code> en jeu pour voir une liste rapide des commandes principales.
+                        <strong>Tip:</strong> Use <code>/help</code> in-game to see a quick list of main commands.
                     </div>
                 </div>
 
@@ -61,20 +51,20 @@
                     <!-- General Commands -->
                     <div class="command-category">
                         <div class="category-header">
-                            <h2><i class="fas fa-cogs"></i> Commandes Générales</h2>
+                            <h2><i class="fas fa-cogs"></i> General Commands</h2>
                         </div>
                         <div class="commands-list">
                             <div class="command-item">
                                 <div class="command-syntax">/help</div>
-                                <div class="command-description">Affiche la liste des commandes principales disponibles.</div>
+                                <div class="command-description">Displays the list of main available commands.</div>
                             </div>
                             <div class="command-item">
                                 <div class="command-syntax">/time</div>
-                                <div class="command-description">Affiche l'heure actuelle du serveur.</div>
+                                <div class="command-description">Shows the current server time.</div>
                             </div>
                             <div class="command-item">
                                 <div class="command-syntax">/players</div>
-                                <div class="command-description">Affiche le nombre de joueurs connectés.</div>
+                                <div class="command-description">Displays the number of connected players.</div>
                             </div>
                         </div>
                     </div>
@@ -82,19 +72,19 @@
                     <!-- Job Commands -->
                     <div class="command-category">
                         <div class="category-header">
-                            <h2><i class="fas fa-briefcase"></i> Commandes de Métiers</h2>
+                            <h2><i class="fas fa-briefcase"></i> Job Commands</h2>
                         </div>
                         <div class="commands-list">
                             <div class="command-item">
                                 <div class="command-syntax">/job</div>
-                                <div class="command-description">Affiche des informations sur votre métier actuel.</div>
+                                <div class="command-description">Displays information about your current job.</div>
                             </div>
                             <div class="command-item">
                                 <div class="command-syntax">/quitjob</div>
-                                <div class="command-description">Quitte votre métier actuel.</div>
+                                <div class="command-description">Quit your current job.</div>
                                 <div class="command-note">
                                     <i class="fas fa-exclamation-triangle"></i>
-                                    <strong>Attention :</strong> Vous perdrez votre progression dans le métier.
+                                    <strong>Warning:</strong> You will lose your job progression.
                                 </div>
                             </div>
                         </div>
@@ -103,22 +93,22 @@
                     <!-- Economy Commands -->
                     <div class="command-category">
                         <div class="category-header">
-                            <h2><i class="fas fa-dollar-sign"></i> Commandes Économiques</h2>
+                            <h2><i class="fas fa-dollar-sign"></i> Economy Commands</h2>
                         </div>
                         <div class="commands-list">
                             <div class="command-item">
-                                <div class="command-syntax">/pay [id] [montant]</div>
-                                <div class="command-description">Donne de l'argent liquide à un autre joueur.</div>
+                                <div class="command-syntax">/pay [id] [amount]</div>
+                                <div class="command-description">Gives cash to another player.</div>
                                 <div class="command-params">
-                                    <h4>Paramètres :</h4>
+                                    <h4>Parameters:</h4>
                                     <ul class="param-list">
                                         <li class="param-item">
                                             <span class="param-name">id</span>
-                                            <span class="param-desc">- ID du joueur à payer</span>
+                                            <span class="param-desc">- ID of the player to pay</span>
                                         </li>
                                         <li class="param-item">
-                                            <span class="param-name">montant</span>
-                                            <span class="param-desc">- Somme à donner</span>
+                                            <span class="param-name">amount</span>
+                                            <span class="param-desc">- Amount of money to give</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -129,16 +119,16 @@
                     <!-- Vehicle Commands -->
                     <div class="command-category">
                         <div class="category-header">
-                            <h2><i class="fas fa-car"></i> Commandes de Véhicules</h2>
+                            <h2><i class="fas fa-car"></i> Vehicle Commands</h2>
                         </div>
                         <div class="commands-list">
                             <div class="command-item">
                                 <div class="command-syntax">/vehicle</div>
-                                <div class="command-description">Ouvre le menu de gestion des véhicules.</div>
+                                <div class="command-description">Opens the vehicle management menu.</div>
                             </div>
                             <div class="command-item">
                                 <div class="command-syntax">/park</div>
-                                <div class="command-description">Gare votre véhicule à l'emplacement actuel.</div>
+                                <div class="command-description">Parks your vehicle at the current location.</div>
                             </div>
                         </div>
                     </div>
@@ -146,61 +136,61 @@
                     <!-- Communication Commands -->
                     <div class="command-category">
                         <div class="category-header">
-                            <h2><i class="fas fa-comments"></i> Commandes de Communication</h2>
+                            <h2><i class="fas fa-comments"></i> Communication Commands</h2>
                         </div>
                         <div class="commands-list">
                             <div class="command-item">
                                 <div class="command-syntax">/pm [message]</div>
-                                <div class="command-description">Chuchote un message aux joueurs très proches.</div>
+                                <div class="command-description">Whispers a message to nearby players.</div>
                             </div>
                             <div class="command-item">
                                 <div class="command-syntax">/discord</div>
-                                <div class="command-description">Affiche le lien vers le serveur Discord officiel.</div>
+                                <div class="command-description">Displays the link to the official Discord server.</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Admin Commands -->
+                    <!-- Help Commands -->
                     <div class="command-category">
                         <div class="category-header">
-                            <h2><i class="fas fa-shield-alt"></i> Commandes d'Aide</h2>
+                            <h2><i class="fas fa-shield-alt"></i> Help Commands</h2>
                         </div>
                         <div class="commands-list">
                             <div class="command-item">
                                 <div class="command-syntax">/report [message]</div>
-                                <div class="command-description">Signale un problème ou un joueur aux administrateurs.</div>
+                                <div class="command-description">Reports an issue or a player to the administrators.</div>
                             </div>
                             <div class="command-item">
                                 <div class="command-syntax">/rules</div>
-                                <div class="command-description">Affiche un rappel des règles principales du serveur.</div>
+                                <div class="command-description">Displays a reminder of the main server rules.</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Navigation rapide -->
+                <!-- Quick Navigation -->
                 <div class="quick-navigation">
-                    <h3><i class="fas fa-compass"></i> Navigation rapide</h3>
+                    <h3><i class="fas fa-compass"></i> Quick Navigation</h3>
                     <div class="nav-links">
                         <a href="rules.html" class="nav-link-card">
                             <i class="fas fa-gavel"></i>
                             <div>
-                                <h4>Règlement</h4>
-                                <p>Règles à respecter sur le serveur</p>
+                                <h4>Rules</h4>
+                                <p>Server rules to follow</p>
                             </div>
                         </a>
                         <a href="guides.html" class="nav-link-card">
                             <i class="fas fa-book-open"></i>
                             <div>
                                 <h4>Guides</h4>
-                                <p>Premiers pas et tutoriels</p>
+                                <p>Getting started and tutorials</p>
                             </div>
                         </a>
                         <a href="jobs.html" class="nav-link-card">
                             <i class="fas fa-briefcase"></i>
                             <div>
-                                <h4>Métiers</h4>
-                                <p>Découvrir les activités</p>
+                                <h4>Jobs</h4>
+                                <p>Discover activities</p>
                             </div>
                         </a>
                     </div>
@@ -208,11 +198,8 @@
             </div>
         </section>
     </main>
+</Layout>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
-
-    <script src="/js/components.js" is:inline></script>
-    <script src="/js/search.js" is:inline></script>
-</body>
-</html>
+<style>
+    @import url("../../styles/commands.css");
+</style>

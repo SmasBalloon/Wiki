@@ -1,0 +1,291 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout title="Guides" description="Guide for Capitalyx">
+  <!-- Breadcrumbs -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <div class="breadcrumb-item">
+                    <i class="fas fa-home breadcrumb-icon"></i>
+                    <a href="index.html">Home</a>
+                </div>
+                <span class="breadcrumb-separator">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+                <div class="breadcrumb-item active">
+                    <i class="fas fa-book-open breadcrumb-icon"></i>
+                    <span>Guides</span>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-book-open"></i>
+                    Server Guides
+                </h1>
+                <p class="page-subtitle">All the guides to start your tycoon adventure on Capitalyx</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- TOC fixed button -->
+                <button class="toc-fixed-button" onclick="openTOCModal()" title="Table of Contents">
+                    <i class="fas fa-list"></i>
+                </button>
+
+                <!-- TOC Modal -->
+                <div class="toc-modal" id="tocModal">
+                    <div class="toc-modal-content">
+                        <div class="toc-modal-header">
+                            <h3 class="toc-modal-title">
+                                <i class="fas fa-list"></i>
+                                Table of Contents
+                            </h3>
+                            <button class="toc-modal-close" onclick="closeTOCModal()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <ul class="toc-modal-list">
+                            <li class="toc-modal-item">
+                                <a href="#guides-debutant" class="toc-modal-link" onclick="closeTOCModal()">
+                                    <i class="fas fa-play"></i>
+                                    Beginner Guides
+                                </a>
+                            </li>
+                            <li class="toc-modal-item">
+                                <a href="#zones-activite" class="toc-modal-link" onclick="closeTOCModal()">
+                                    <i class="fas fa-map"></i>
+                                    Activity Zones
+                                </a>
+                            </li>
+                            <li class="toc-modal-item">
+                                <a href="#metiers-business" class="toc-modal-link" onclick="closeTOCModal()">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    Jobs & Business
+                                </a>
+                            </li>
+                            <li class="toc-modal-item">
+                                <a href="#communication" class="toc-modal-link" onclick="closeTOCModal()">
+                                    <i class="fas fa-comments"></i>
+                                    Communication & Cooperation
+                                </a>
+                            </li>
+                            <li class="toc-modal-item">
+                                <a href="#factions" class="toc-modal-link" onclick="closeTOCModal()">
+                                    <i class="fas fa-users-cog"></i>
+                                    Factions & Bonuses
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="guides-grid">
+                    <div class="guide-category" id="guides-debutant">
+                        <div class="category-header">
+                            <i class="fas fa-play"></i>
+                            <h2>Beginner Guides</h2>
+                        </div>
+                        <div class="guide-list">
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>How to Join the Server</h3>
+                                    <p>Step-by-step instructions to connect to Capitalyx for the first time.</p>
+                                    <div class="guide-steps">
+                                        <ol>
+                                            <li>Open FiveM</li>
+                                            <li>Go to the Servers tab</li>
+                                            <li>Search for "Capitalyx"</li>
+                                            <li>Click Connect</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>Character Creation</h3>
+                                    <p>Guide to creating your character and choosing your business path.</p>
+                                    <div class="guide-tips">
+                                        <p><strong>Tips:</strong></p>
+                                        <ul>
+                                            <li>Choose a name for your entrepreneur</li>
+                                            <li>Think about the type of business that interests you</li>
+                                            <li>Define your economic goals</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-category" id="zones-activite">
+                        <div class="category-header">
+                            <i class="fas fa-map"></i>
+                            <h2>Activity Zones</h2>
+                        </div>
+                        <div class="guide-list">
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>Production Areas</h3>
+                                    <p>Discover key zones to develop your business.</p>
+                                    <div class="locations-list">
+                                        <ul>
+                                            <li><strong>Agricultural Zones:</strong> Farms and crops</li>
+                                            <li><strong>Mines:</strong> Resource extraction</li>
+                                            <li><strong>Shopping Centers:</strong> Sales and trade</li>
+                                            <li><strong>Warehouses:</strong> Storage and logistics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-category" id="metiers-business">
+                        <div class="category-header">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h2>Jobs & Business</h2>
+                        </div>
+                        <div class="guide-list">
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>Choosing a Job</h3>
+                                    <p>Guide to selecting the job that matches your playstyle.</p>
+                                    <div class="money-methods">
+                                        <ul>
+                                            <li><strong>Farmer:</strong> Crops and livestock</li>
+                                            <li><strong>Miner:</strong> Ore extraction</li>
+                                            <li><strong>Merchant:</strong> Buying/selling goods</li>
+                                            <li><strong>Transporter:</strong> Logistics and deliveries</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>Trading System</h3>
+                                    <p>How to trade with other players and benefit from group bonuses.</p>
+                                    <div class="bank-info">
+                                        <p><strong>Trading methods:</strong></p>
+                                        <ul>
+                                            <li>Direct player-to-player sales</li>
+                                            <li>Community markets</li>
+                                            <li>Barter systems</li>
+                                            <li>Faction/company bonuses</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-category" id="communication">
+                        <div class="category-header">
+                            <i class="fas fa-comments"></i>
+                            <h2>Communication & Cooperation</h2>
+                        </div>
+                        <div class="guide-list">
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>Communication Systems</h3>
+                                    <p>Guide to the different ways to communicate and collaborate.</p>
+                                    <div class="chat-commands">
+                                        <ul>
+                                            <li><strong>/trade</strong> - Offer a trade</li>
+                                            <li><strong>/help</strong> - Ask for help</li>
+                                            <li><strong>/market</strong> - Access the market</li>
+                                            <li><strong>/team</strong> - Team communication</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-category" id="factions">
+                        <div class="category-header">
+                            <i class="fas fa-users-cog"></i>
+                            <h2>Factions & Bonuses</h2>
+                        </div>
+                        <div class="guide-list">
+                            <div class="guide-item">
+                                <div class="guide-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h3>Joining a Faction</h3>
+                                    <p>Factions provide advantages to optimize your progress.</p>
+                                    <div class="chat-commands">
+                                        <ul>
+                                            <li><strong>XP Bonus:</strong> Faster job progression</li>
+                                            <li><strong>Economic advantages:</strong> Small profit bonuses</li>
+                                            <li><strong>Mutual aid:</strong> Support and advice from members</li>
+                                            <li><strong>Events:</strong> Access to special activities</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="quick-navigation">
+                    <h3><i class="fas fa-compass"></i> Quick Navigation</h3>
+                    <div class="nav-links">
+                        <a href="rules.html" class="nav-link-card">
+                            <i class="fas fa-gavel"></i>
+                            <div>
+                                <h4>Rules</h4>
+                                <p>All server rules</p>
+                            </div>
+                        </a>
+                        <a href="commands.html" class="nav-link-card">
+                            <i class="fas fa-terminal"></i>
+                            <div>
+                                <h4>Commands</h4>
+                                <p>List of useful commands</p>
+                            </div>
+                        </a>
+                        <a href="jobs.html" class="nav-link-card">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Jobs</h4>
+                                <p>Guide to available jobs</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+  @import url("../../styles/guides.css");
+</style>

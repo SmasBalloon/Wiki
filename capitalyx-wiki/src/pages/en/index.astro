@@ -1,0 +1,186 @@
+---
+// src/pages/index.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Capitalyx Wiki" description="Your complete guide to navigating and fully enjoying the Capitalyx experience">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Welcome to the <span class="highlight">Capitalyx</span> Wiki
+      </h1>
+      <p class="hero-subtitle">
+        Your complete guide to navigating and fully enjoying the Capitalyx experience
+      </p>..
+      <div class="hero-buttons">
+        <a href="#features" class="btn btn-primary">
+          <i class="fas fa-book-open"></i>
+          Explore the Wiki
+        </a>
+        <a href="/en/rules" class="btn btn-secondary">
+          <i class="fas fa-gavel"></i>
+          Rules
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">What does this wiki include?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Complete Documentation</h3>
+          <p>
+            All the information you need to understand how the server works
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Detailed Guides</h3>
+            <p>
+              Step-by-step tutorials to master every aspect of roleplay
+            </p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Quick Reference</h3>
+          <p>Quickly find the information you’re looking for</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3>Always Up to Date</h3>
+          <p>
+            Content regularly updated with the latest features
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="quick-links">
+    <div class="container">
+      <h2 class="section-title">Quick Access</h2>
+      <div class="quick-links-grid">
+        <a href="/en/rules" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-gavel"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Rules</h3>
+            <p>All the server rules to follow</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/en/guides" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Guides</h3>
+            <p>Tutorials to get started</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/en/jobs" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Jobs</h3>
+            <p>Discover all available jobs</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/en/commands" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Commands</h3>
+            <p>List of useful commands</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/en/faq" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>FAQ</h3>
+            <p>Frequently asked questions</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="#" class="quick-link-card">
+          <div class="quick-link-icon">
+            <i class="fab fa-discord"></i>
+          </div>
+          <div class="quick-link-content">
+            <h3>Discord</h3>
+            <p>Join the community</p>
+            <span class="quick-link-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started Section -->
+  <section class="getting-started">
+    <div class="container">
+      <div class="getting-started-content">
+        <div class="getting-started-text">
+          <h2>New to Capitalyx?</h2>
+          <p>
+            Start by checking out our beginner’s guide to learn the basics of the server and discover how to grow your business empire.
+          </p>
+          <div class="getting-started-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <span class="step-text">Read the rules</span>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <span class="step-text">Choose your job</span>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <span class="step-text">Join the server</span>
+            </div>
+          </div>
+          <a href="/en/guides" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            Get Started
+          </a>
+        </div>
+        <div class="getting-started-image">
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('../../styles/index.css');
+</style>

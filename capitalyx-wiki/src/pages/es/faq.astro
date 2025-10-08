@@ -1,182 +1,64 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Capitalyx Wiki</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/root.css">
-    <link rel="stylesheet" href="/css/faq.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Header will be loaded here -->
-    <div id="header-container"></div>
+---
+import Layout from "../../layouts/Layout.astro";
+---
 
-    <!-- Breadcrumbs -->
-    <section class="breadcrumb">
-        <div class="container">
-            <nav class="breadcrumb-nav">
-                <div class="breadcrumb-item">
-                    <i class="fas fa-home breadcrumb-icon"></i>
-                    <a href="index.html">Accueil</a>
-                </div>
-                <span class="breadcrumb-separator">
-                    <i class="fas fa-chevron-right"></i>
-                </span>
-                <div class="breadcrumb-item active">
-                    <i class="fas fa-question-circle breadcrumb-icon"></i>
-                    <span>FAQ</span>
-                </div>
-            </nav>
-        </div>
-    </section>
+<Layout title="FAQ - Servidor RP">
+  <section class="faq">
+    <h1>Preguntas Frecuentes (FAQ)</h1>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <section class="page-hero">
-            <div class="container">
-                <h1 class="page-title">
-                    <i class="fas fa-question-circle"></i>
-                    Questions Fréquentes
-                </h1>
-                <p class="page-subtitle">Trouvez rapidement les réponses à vos questions</p>
-            </div>
-        </section>
+    <h2>📌 General</h2>
+    <ul>
+      <li><strong>¿Cómo me conecto al servidor?</strong><br />
+      Debes tener FiveM instalado. Luego, busca el servidor en la lista o conéctate directamente con la IP proporcionada por nuestro staff.</li>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="faq-grid">
-                    <div class="faq-category">
-                        <h2><i class="fas fa-play"></i> Débuter sur le Serveur</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3>Comment puis-je rejoindre le serveur ?</h3>
-                                <p>Vous devez posséder FiveM et GTA V. Recherchez "Capitalyx" dans la liste des serveurs FiveM.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Faut-il une candidature pour jouer ?</h3>
-                                <p>Non, le serveur est en accès libre. Vous pouvez vous connecter directement et créer votre personnage.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Combien de personnages puis-je créer ?</h3>
-                                <p>Vous pouvez créer un personnage par compte FiveM.</p>
-                            </div>
-                        </div>
-                    </div>
+      <li><strong>¿Necesito una whitelist?</strong><br />
+      Sí, debes pasar por un breve proceso de solicitud en nuestro Discord para acceder al servidor.</li>
 
-                    <div class="faq-category">
-                        <h2><i class="fas fa-gamepad"></i> Gameplay</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3>Qu'est-ce qu'un serveur tycoon ?</h3>
-                                <p>Un serveur axé sur la gestion de business, les métiers et l'économie. Vous pouvez développer votre empire commercial dans une ambiance détendue.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Puis-je jouer avec mes amis ?</h3>
-                                <p>Absolument ! L'entraide et la coopération sont encouragées. Vous pouvez créer des entreprises ensemble ou échanger des ressources.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Comment gagner de l'argent ?</h3>
-                                <p>Choisissez un métier qui vous plaît, développez votre business, faites du commerce avec d'autres joueurs.</p>
-                            </div>
-                        </div>
-                    </div>
+      <li><strong>¿El servidor es gratuito?</strong><br />
+      Sí, jugar es completamente gratuito. Sin embargo, ofrecemos packs de soporte que ayudan a mantener el servidor.</li>
+    </ul>
 
-                    <div class="faq-category">
-                        <h2><i class="fas fa-cog"></i> Technique</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3>Le serveur lag, que faire ?</h3>
-                                <p>Vérifiez votre connexion internet. Si le problème persiste, signalez-le sur Discord avec des détails précis.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>J'ai perdu mes objets/argent, que faire ?</h3>
-                                <p>Contactez un administrateur sur Discord avec les preuves (screenshots, vidéos) et les détails de l'incident.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Comment signaler un bug ?</h3>
-                                <p>Utilisez le canal #bug-reports sur Discord avec une description détaillée et des preuves si possible.</p>
-                            </div>
-                        </div>
-                    </div>
+    <h2>⚙️ Técnico</h2>
+    <ul>
+      <li><strong>El servidor no aparece en la lista, ¿qué hago?</strong><br />
+      Revisa tu conexión a Internet y asegúrate de tener FiveM actualizado. También puedes unirte con la IP directa.</li>
 
-                    <div class="faq-category">
-                        <h2><i class="fas fa-shield-alt"></i> Règles et Sanctions</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3>Que risque-t-on en cas d'infraction ?</h3>
-                                <p>Selon la gravité : avertissement, kick temporaire ou bannissement définitif. Consultez la page Règlement pour plus de détails.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Comment contester une sanction ?</h3>
-                                <p>Ouvrez un ticket sur Discord dans la section appropriée avec vos arguments et preuves.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Peut-on faire appel d'un bannissement ?</h3>
-                                <p>Oui, après un délai de réflexion. Utilisez le système de tickets Discord pour présenter votre demande d'appel.</p>
-                            </div>
-                        </div>
-                    </div>
+      <li><strong>Tengo errores al conectarme, ¿a quién debo contactar?</strong><br />
+      Abre un ticket en el Discord, el staff técnico te ayudará a resolverlo.</li>
+    </ul>
 
-                    <div class="faq-category">
-                        <h2><i class="fas fa-users"></i> Communauté</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3>Comment rejoindre le Discord ?</h3>
-                                <p>Le lien Discord est disponible dans le jeu via la commande /discord ou sur notre site web.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Y a-t-il des événements organisés ?</h3>
-                                <p>Oui ! Des événements économiques, concours de production, marchés spéciaux et défis communautaires sont régulièrement organisés.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Comment créer une alliance/entreprise ?</h3>
-                                <p>Vous pouvez créer ou rejoindre une faction/entreprise pour bénéficier de bonus d'XP et d'autres avantages légers qui facilitent votre progression.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Quels sont les avantages des factions ?</h3>
-                                <p>Les factions offrent principalement des bonus d'expérience, de légers avantages économiques et un environnement d'entraide entre membres.</p>
-                            </div>
-                        </div>
-                    </div>
+    <h2>👮 Rol & Reglas</h2>
+    <ul>
+      <li><strong>¿Qué tipo de rol se espera?</strong><br />
+      Buscamos un rol serio e inmersivo. Se prohíben comportamientos tipo troll o fuera de personaje.</li>
 
-                    <div class="faq-category">
-                        <h2><i class="fas fa-dollar-sign"></i> Métiers & Économie</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3>Quels métiers sont disponibles ?</h3>
-                                <p>Fermier, mineur, bûcheron, commerçant, transporteur, et bien d'autres ! Chaque métier a ses propres mécaniques et opportunités de profit.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Peut-on échanger des ressources entre joueurs ?</h3>
-                                <p>Oui ! L'échange et l'entraide sont au cœur du gameplay. Vous pouvez vendre vos productions ou aider d'autres joueurs avec vos ressources.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Comment fonctionne le système économique ?</h3>
-                                <p>L'économie du serveur est fixe avec des prix et mécaniques établis. Focalisez-vous sur l'optimisation de vos productions et l'efficacité de vos métiers.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <li><strong>¿Puedo ser parte de la policía o EMS?</strong><br />
+      Sí, debes presentar una solicitud y pasar una entrevista con el equipo de reclutamiento.</li>
 
-                <div class="contact-help">
-                    <h2><i class="fas fa-life-ring"></i> Besoin d'Aide Supplémentaire ?</h2>
-                    <p>Si vous ne trouvez pas la réponse à votre question ici, n'hésitez pas à :</p>
-                    <ul>
-                        <li>Poser votre question sur Discord</li>
-                        <li>Contacter un membre du staff en jeu</li>
-                        <li>Ouvrir un ticket de support</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+      <li><strong>¿Qué pasa si rompo las reglas?</strong><br />
+      Dependiendo de la gravedad, puedes recibir un aviso, una expulsión temporal o un baneo permanente.</li>
+    </ul>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
+    <h2>💰 Economía & Trabajos</h2>
+    <ul>
+      <li><strong>¿Qué trabajos hay disponibles?</strong><br />
+      Hay tanto trabajos legales (taxista, mecánico, EMS, policía) como actividades ilegales (mafias, tráfico, etc.).</li>
 
-    <script src="js/components.js" is:inline></script>
-    <script src="js/search.js" is:inline></script>
-</body>
-</html>
+      <li><strong>¿Cómo gano dinero rápidamente?</strong><br />
+      Te recomendamos comenzar con trabajos legales para familiarizarte con el servidor. Las actividades ilegales pueden generar más ingresos, pero son más arriesgadas.</li>
+    </ul>
+
+    <h2>📞 Soporte</h2>
+    <ul>
+      <li><strong>¿Dónde puedo obtener ayuda?</strong><br />
+      En nuestro Discord, en la sección de soporte o abriendo un ticket.</li>
+
+      <li><strong>¿Puedo sugerir ideas para el servidor?</strong><br />
+      ¡Claro! Tenemos un canal dedicado a sugerencias en Discord.</li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+    @import url(".././styles/faq.css");
+</style>
