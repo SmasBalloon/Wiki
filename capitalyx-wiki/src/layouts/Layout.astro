@@ -6,6 +6,11 @@ export interface Props {
 }
 
 const { title, description = "Votre guide complet pour naviguer et profiter pleinement de l'expérience Capitalyx" } = Astro.props;
+
+// Détecter la langue basée sur l'URL
+const currentPath = Astro.url.pathname;
+const lang = currentPath.startsWith('/en/') ? 'en' : currentPath.startsWith('/es/') ? 'es' : 'fr';
+const langPrefix = lang === 'fr' ? '' : `/${lang}`;
 ---
 
 <!DOCTYPE html>
@@ -35,22 +40,32 @@ const { title, description = "Votre guide complet pour naviguer et profiter plei
           </div>
           <ul class="nav-menu">
             <li class="nav-item">
-              <a href="/" class="nav-link">Accueil</a>
+              <a href={`${langPrefix}/`} class="nav-link">
+                {lang === 'en' ? 'Home' : lang === 'es' ? 'Inicio' : 'Accueil'}
+              </a>
             </li>
             <li class="nav-item">
-              <a href="/rules" class="nav-link">Règlement</a>
+              <a href={`${langPrefix}/rules`} class="nav-link">
+                {lang === 'en' ? 'Rules' : lang === 'es' ? 'Reglas' : 'Règlement'}
+              </a>
             </li>
             <li class="nav-item">
-              <a href="/guides" class="nav-link">Guides</a>
+              <a href={`${langPrefix}/guides`} class="nav-link">
+                {lang === 'en' ? 'Guides' : lang === 'es' ? 'Guías' : 'Guides'}
+              </a>
             </li>
             <li class="nav-item">
-              <a href="/jobs" class="nav-link">Métiers</a>
+              <a href={`${langPrefix}/jobs`} class="nav-link">
+                {lang === 'en' ? 'Jobs' : lang === 'es' ? 'Trabajos' : 'Métiers'}
+              </a>
             </li>
             <li class="nav-item">
-              <a href="/commands" class="nav-link">Commandes</a>
+              <a href={`${langPrefix}/commands`} class="nav-link">
+                {lang === 'en' ? 'Commands' : lang === 'es' ? 'Comandos' : 'Commandes'}
+              </a>
             </li>
             <li class="nav-item">
-              <a href="/faq" class="nav-link">FAQ</a>
+              <a href={`${langPrefix}/faq`} class="nav-link">FAQ</a>
             </li>
           </ul>
           <!-- Bouton de recherche -->
@@ -62,21 +77,21 @@ const { title, description = "Votre guide complet pour naviguer et profiter plei
             <div class="language-selector">
               <button class="lang-btn" id="langBtn">
                 <i class="fas fa-globe"></i>
-                <span id="currentLang">FR</span>
+                <span id="currentLang">{lang === 'en' ? 'EN' : lang === 'es' ? 'ES' : 'FR'}</span>
                 <i class="fas fa-chevron-down"></i>
               </button>
               <div class="lang-dropdown" id="langDropdown">
                 <a href="/" class="lang-option" data-lang="fr">
                   <img src="/assets/img/flags/france.png" alt="France" class="flag-img" />
-                  Français
+                  {lang === 'en' ? 'French' : lang === 'es' ? 'Francés' : 'Français'}
                 </a>
                 <a href="/en/" class="lang-option" data-lang="en">
                   <img src="/assets/img/flags/usuk.png" alt="English" class="flag-img" />
-                  English
+                  {lang === 'en' ? 'English' : lang === 'es' ? 'Inglés' : 'Anglais'}
                 </a>
                 <a href="/es/" class="lang-option" data-lang="es">
                   <img src="/assets/img/flags/spain.png" alt="Espagnol" class="flag-img" />
-                  Espagnol
+                  {lang === 'en' ? 'Spanish' : lang === 'es' ? 'Español' : 'Espagnol'}
                 </a>
               </div>
             </div>
@@ -105,31 +120,31 @@ const { title, description = "Votre guide complet pour naviguer et profiter plei
           </div>
 
           <div class="footer-section">
-            <h4 class="footer-title">Navigation</h4>
+            <h4 class="footer-title">{lang === 'en' ? 'Navigation' : lang === 'es' ? 'Navegación' : 'Navigation'}</h4>
             <ul class="footer-links">
-              <li><a href="/" class="footer-link">Accueil</a></li>
-              <li><a href="/rules" class="footer-link">Règlement</a></li>
-              <li><a href="/guides" class="footer-link">Guides</a></li>
-              <li><a href="/jobs" class="footer-link">Métiers</a></li>
+              <li><a href={`${langPrefix}/`} class="footer-link">{lang === 'en' ? 'Home' : lang === 'es' ? 'Inicio' : 'Accueil'}</a></li>
+              <li><a href={`${langPrefix}/rules`} class="footer-link">{lang === 'en' ? 'Rules' : lang === 'es' ? 'Reglas' : 'Règlement'}</a></li>
+              <li><a href={`${langPrefix}/guides`} class="footer-link">{lang === 'en' ? 'Guides' : lang === 'es' ? 'Guías' : 'Guides'}</a></li>
+              <li><a href={`${langPrefix}/jobs`} class="footer-link">{lang === 'en' ? 'Jobs' : lang === 'es' ? 'Trabajos' : 'Métiers'}</a></li>
             </ul>
           </div>
 
           <div class="footer-section">
-            <h4 class="footer-title">Ressources</h4>
+            <h4 class="footer-title">{lang === 'en' ? 'Resources' : lang === 'es' ? 'Recursos' : 'Ressources'}</h4>
             <ul class="footer-links">
-              <li><a href="/commands" class="footer-link">Commandes</a></li>
-              <li><a href="/faq" class="footer-link">FAQ</a></li>
+              <li><a href={`${langPrefix}/commands`} class="footer-link">{lang === 'en' ? 'Commands' : lang === 'es' ? 'Comandos' : 'Commandes'}</a></li>
+              <li><a href={`${langPrefix}/faq`} class="footer-link">FAQ</a></li>
               <li><a href="#" class="footer-link">Discord</a></li>
-              <li><a href="#" class="footer-link">Forum</a></li>
+              <li><a href="#" class="footer-link">{lang === 'en' ? 'Forum' : lang === 'es' ? 'Foro' : 'Forum'}</a></li>
             </ul>
           </div>
 
           <div class="footer-section">
-            <h4 class="footer-title">Langues</h4>
+            <h4 class="footer-title">{lang === 'en' ? 'Languages' : lang === 'es' ? 'Idiomas' : 'Langues'}</h4>
             <ul class="footer-links">
-              <li><a href="/" class="footer-link">Français</a></li>
-              <li><a href="/en/" class="footer-link">Anglais</a></li>
-              <li><a href="/es/" class="footer-link">Espagnol</a></li>
+              <li><a href="/" class="footer-link">{lang === 'en' ? 'French' : lang === 'es' ? 'Francés' : 'Français'}</a></li>
+              <li><a href="/en/" class="footer-link">{lang === 'en' ? 'English' : lang === 'es' ? 'Inglés' : 'Anglais'}</a></li>
+              <li><a href="/es/" class="footer-link">{lang === 'en' ? 'Spanish' : lang === 'es' ? 'Español' : 'Espagnol'}</a></li>
             </ul>
           </div>
         </div>
